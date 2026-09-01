@@ -1,0 +1,211 @@
+{
+  "extDescription": {
+    "message": "Tự động điền thông tin đăng nhập từ ứng dụng Buddy trên máy tính."
+  },
+  "popupSubtitle": {
+    "message": "Trình quản lý mật khẩu"
+  },
+  "versionMismatch": {
+    "message": "Tiện ích mở rộng này và ứng dụng Buddy không đồng bộ. Hãy cập nhật cả hai lên phiên bản mới nhất để tự động điền tiếp tục hoạt động."
+  },
+  "noLogins": {
+    "message": "Không có thông tin đăng nhập nào được lưu cho trang này"
+  },
+  "cards": {
+    "message": "Thẻ"
+  },
+  "addresses": {
+    "message": "Địa chỉ"
+  },
+  "fillActive": {
+    "message": "Đang tự động điền"
+  },
+  "fill": {
+    "message": "Điền"
+  },
+  "cancel": {
+    "message": "Hủy"
+  },
+  "saveNewLogin": {
+    "message": "Lưu thông tin đăng nhập mới?"
+  },
+  "updatePassword": {
+    "message": "Cập nhật mật khẩu?"
+  },
+  "save": {
+    "message": "Lưu"
+  },
+  "saveTo": {
+    "message": "Lưu vào"
+  },
+  "dismiss": {
+    "message": "Bỏ qua"
+  },
+  "notRunning": {
+    "message": "Buddy chưa chạy"
+  },
+  "notInstalled": {
+    "message": "Không tìm thấy ứng dụng Buddy"
+  },
+  "notInstalledHint": {
+    "message": "Tiện ích không có kho lưu trữ riêng. Hãy cài đặt ứng dụng Buddy trên máy tính để bắt đầu."
+  },
+  "getBuddy": {
+    "message": "Tải Buddy tại pwbuddy.com"
+  },
+  "open": {
+    "message": "Mở"
+  },
+  "unlocked": {
+    "message": "Đã mở khóa"
+  },
+  "locked": {
+    "message": "Đã khóa"
+  },
+  "saveLoginFor": {
+    "message": "Lưu thông tin đăng nhập cho $TITLE$? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "updatePasswordFor": {
+    "message": "Cập nhật mật khẩu cho $TITLE$? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "notNow": {
+    "message": "Để sau"
+  },
+  "saveFailed": {
+    "message": "Không thể lưu. Vui lòng thử lại."
+  },
+  "vaultLocked": {
+    "message": "Kho lưu trữ đang bị khóa"
+  },
+  "openToUnlock": {
+    "message": "Mở Buddy để mở khóa"
+  },
+  "pairNeeded": {
+    "message": "Chưa kết nối với Buddy"
+  },
+  "pairWaiting": {
+    "message": "Hãy phê duyệt kết nối trong ứng dụng Buddy…"
+  },
+  "connect": {
+    "message": "Kết nối"
+  },
+  "onboardHeading": {
+    "message": "Buddy đã sẵn sàng"
+  },
+  "onboardSub": {
+    "message": "Xem nhanh cách hoạt động."
+  },
+  "onboardVaultTitle": {
+    "message": "Kho của bạn nằm trong ứng dụng máy tính"
+  },
+  "onboardVaultBody": {
+    "message": "Tiện ích này không có kho riêng. Nó hỏi ứng dụng Buddy mà bạn mở khóa, và chỉ hỏi những trường mà trang thực sự có thể điền."
+  },
+  "onboardDiagramPage": {
+    "message": "Trang"
+  },
+  "onboardDiagramExtension": {
+    "message": "Tiện ích"
+  },
+  "onboardDiagramApp": {
+    "message": "Ứng dụng Buddy"
+  },
+  "onboardAccessTitle": {
+    "message": "Điền mà không rời khỏi trang"
+  },
+  "onboardAccessBody": {
+    "message": "Cho phép Buddy trên các trang bạn truy cập và một danh sách nhỏ sẽ hiện ở ô đăng nhập. Bạn có thể tạm dừng theo từng trang khi thấy vướng."
+  },
+  "onboardAccessAllow": {
+    "message": "Cho phép trên mọi trang"
+  },
+  "onboardAccessGranted": {
+    "message": "Đã cho phép. Danh sách đang bật."
+  },
+  "onboardToolbarTitle": {
+    "message": "Hoặc điền từ thanh công cụ"
+  },
+  "onboardToolbarBody": {
+    "message": "Nhấp vào biểu tượng Buddy trên bất kỳ trang nào. Cách này hoạt động dù bạn có cho phép ở trên hay không."
+  },
+  "onboardDone": {
+    "message": "Xong"
+  },
+  "optionsHeading": {
+    "message": "Cài đặt Buddy"
+  },
+  "optionsAccessTitle": {
+    "message": "Quyền truy cập trang"
+  },
+  "optionsAccessOn": {
+    "message": "Buddy có thể hiện danh sách trên các trang bạn truy cập."
+  },
+  "optionsAccessOff": {
+    "message": "Buddy chỉ điền từ thanh công cụ. Hãy cho phép truy cập trang để có danh sách ngay trên trang."
+  },
+  "optionsAccessAllow": {
+    "message": "Cho phép trên mọi trang"
+  },
+  "optionsPausedTitle": {
+    "message": "Trang đã tạm dừng"
+  },
+  "optionsPausedEmpty": {
+    "message": "Chưa tạm dừng trang nào. Tạm dừng từ cửa sổ Buddy khi danh sách gây vướng."
+  },
+  "optionsResume": {
+    "message": "Tiếp tục"
+  },
+  "pauseOnSite": {
+    "message": "Tạm dừng trên trang này"
+  },
+  "resumeOnSite": {
+    "message": "Tiếp tục trên trang này"
+  },
+  "settings": {
+    "message": "Cài đặt"
+  },
+  "fillFramed": {
+    "message": "Trang này đặt ô đăng nhập trong một khung nhúng. Hãy nhấp vào ô tên người dùng và chọn từ đó."
+  },
+  "fillNoField": {
+    "message": "Không tìm thấy ô đăng nhập trên trang này."
+  },
+  "fillAmbiguous": {
+    "message": "Ở đây có nhiều biểu mẫu đăng nhập. Hãy nhấp vào ô bạn muốn và chọn từ đó."
+  },
+  "openPicker": {
+    "message": "Điền bằng Buddy"
+  },
+  "commandOpenPicker": {
+    "message": "Mở danh sách Buddy ở ô đang chọn"
+  },
+  "onboardDemoLabel": {
+    "message": "Email"
+  },
+  "onboardDemoValue": {
+    "message": "ban@vidu.com"
+  },
+  "onboardDemoCaption": {
+    "message": "Nhấp vào dấu Buddy bên trong ô đăng nhập, hoặc nhấn Ctrl+Shift+L, để xem các đăng nhập đã lưu."
+  }
+}

@@ -1,0 +1,11 @@
+<!-- Anti-autofill decoys: visually hidden credential fields ahead of the
+     real ones, one per hiding technique -->
+<form action="/login">
+  <input type="text" name="username" style="display: none" data-decoy>
+  <input type="password" name="password" style="visibility: hidden" data-decoy>
+  <div hidden><input type="text" name="user_hp" data-decoy></div>
+  <div aria-hidden="true"><input type="password" name="pass_hp" data-decoy></div>
+  <input type="text" name="username" data-expect="username">
+  <input type="password" name="password" data-expect="password">
+  <button>Log in</button>
+</form>

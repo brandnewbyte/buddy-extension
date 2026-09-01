@@ -1,0 +1,11 @@
+<!-- Classic single login form; submit is an <input type=submit> whose label
+     lives in value=, which textContent alone never sees -->
+<main>
+  <form action="/session" method="post">
+    <label>Email</label>
+    <input type="email" name="email" data-expect="username">
+    <label>Password</label>
+    <input type="password" name="password" data-expect="password">
+    <input type="submit" value="Sign in">
+  </form>
+</main>

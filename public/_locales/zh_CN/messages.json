@@ -1,0 +1,211 @@
+{
+  "extDescription": {
+    "message": "从 Buddy 桌面应用自动填充登录信息。"
+  },
+  "popupSubtitle": {
+    "message": "密码管理器"
+  },
+  "versionMismatch": {
+    "message": "此扩展与 Buddy 应用版本不同步。请将两者更新到最新版本以继续使用自动填充。"
+  },
+  "noLogins": {
+    "message": "此网站没有已保存的登录信息"
+  },
+  "cards": {
+    "message": "卡片"
+  },
+  "addresses": {
+    "message": "地址"
+  },
+  "fillActive": {
+    "message": "自动填充进行中"
+  },
+  "fill": {
+    "message": "填充"
+  },
+  "cancel": {
+    "message": "取消"
+  },
+  "saveNewLogin": {
+    "message": "保存新登录信息？"
+  },
+  "updatePassword": {
+    "message": "更新密码？"
+  },
+  "save": {
+    "message": "保存"
+  },
+  "saveTo": {
+    "message": "保存到"
+  },
+  "dismiss": {
+    "message": "忽略"
+  },
+  "notRunning": {
+    "message": "Buddy 未运行"
+  },
+  "notInstalled": {
+    "message": "未找到 Buddy 桌面应用"
+  },
+  "notInstalledHint": {
+    "message": "扩展程序本身没有保险库。请安装 Buddy 桌面应用以开始使用。"
+  },
+  "getBuddy": {
+    "message": "前往 pwbuddy.com 获取 Buddy"
+  },
+  "open": {
+    "message": "打开"
+  },
+  "unlocked": {
+    "message": "已解锁"
+  },
+  "locked": {
+    "message": "已锁定"
+  },
+  "saveLoginFor": {
+    "message": "保存 $TITLE$ 的登录信息？($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "updatePasswordFor": {
+    "message": "更新 $TITLE$ 的密码？($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "notNow": {
+    "message": "暂不"
+  },
+  "saveFailed": {
+    "message": "保存失败，请重试。"
+  },
+  "vaultLocked": {
+    "message": "保险库已锁定"
+  },
+  "openToUnlock": {
+    "message": "打开 Buddy 以解锁"
+  },
+  "pairNeeded": {
+    "message": "未连接到 Buddy"
+  },
+  "pairWaiting": {
+    "message": "请在 Buddy 应用中批准连接…"
+  },
+  "connect": {
+    "message": "连接"
+  },
+  "onboardHeading": {
+    "message": "Buddy 已就绪"
+  },
+  "onboardSub": {
+    "message": "快速了解它的工作方式。"
+  },
+  "onboardVaultTitle": {
+    "message": "保险库始终留在桌面应用里"
+  },
+  "onboardVaultBody": {
+    "message": "本扩展程序没有自己的保险库。它会向你解锁的 Buddy 应用请求，并且只请求当前页面确实能填写的字段。"
+  },
+  "onboardDiagramPage": {
+    "message": "网页"
+  },
+  "onboardDiagramExtension": {
+    "message": "扩展程序"
+  },
+  "onboardDiagramApp": {
+    "message": "Buddy 应用"
+  },
+  "onboardAccessTitle": {
+    "message": "无需离开页面即可填写"
+  },
+  "onboardAccessBody": {
+    "message": "在你访问的网站上允许 Buddy，登录框中会出现一个小的选择列表。觉得碍事时可以按网站暂停。"
+  },
+  "onboardAccessAllow": {
+    "message": "在所有网站上允许"
+  },
+  "onboardAccessGranted": {
+    "message": "已允许。选择列表已开启。"
+  },
+  "onboardToolbarTitle": {
+    "message": "也可以从工具栏填写"
+  },
+  "onboardToolbarBody": {
+    "message": "在任意页面点击工具栏中的 Buddy 图标。无论是否允许上面的权限，这都能用。"
+  },
+  "onboardDone": {
+    "message": "完成"
+  },
+  "optionsHeading": {
+    "message": "Buddy 设置"
+  },
+  "optionsAccessTitle": {
+    "message": "网站访问权限"
+  },
+  "optionsAccessOn": {
+    "message": "Buddy 可以在你访问的网站上显示选择列表。"
+  },
+  "optionsAccessOff": {
+    "message": "Buddy 只能从工具栏填写。允许网站访问即可在页面内使用选择列表。"
+  },
+  "optionsAccessAllow": {
+    "message": "在所有网站上允许"
+  },
+  "optionsPausedTitle": {
+    "message": "已暂停的网站"
+  },
+  "optionsPausedEmpty": {
+    "message": "没有暂停的网站。选择列表碍事时，可在 Buddy 弹出窗口中暂停。"
+  },
+  "optionsResume": {
+    "message": "恢复"
+  },
+  "pauseOnSite": {
+    "message": "在此网站暂停"
+  },
+  "resumeOnSite": {
+    "message": "在此网站恢复"
+  },
+  "settings": {
+    "message": "设置"
+  },
+  "fillFramed": {
+    "message": "此网站把登录框放在内嵌框架中。请点击用户名输入框，然后从那里选择。"
+  },
+  "fillNoField": {
+    "message": "在此页面上未找到登录输入框。"
+  },
+  "fillAmbiguous": {
+    "message": "此页面有多个登录表单。请点击你想填写的输入框，然后从那里选择。"
+  },
+  "openPicker": {
+    "message": "用 Buddy 填写"
+  },
+  "commandOpenPicker": {
+    "message": "在当前输入框上打开 Buddy 列表"
+  },
+  "onboardDemoLabel": {
+    "message": "邮箱"
+  },
+  "onboardDemoValue": {
+    "message": "you@example.com"
+  },
+  "onboardDemoCaption": {
+    "message": "点击登录输入框内的 Buddy 标记，或按 Ctrl+Shift+L，即可查看已保存的登录信息。"
+  }
+}

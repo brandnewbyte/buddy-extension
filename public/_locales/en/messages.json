@@ -1,0 +1,211 @@
+{
+  "extDescription": {
+    "message": "Autofill logins from the Buddy desktop app."
+  },
+  "popupSubtitle": {
+    "message": "Password Manager"
+  },
+  "versionMismatch": {
+    "message": "This extension and the Buddy app are out of sync. Update both to the latest version to keep autofill working."
+  },
+  "noLogins": {
+    "message": "No saved logins for this site"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "addresses": {
+    "message": "Addresses"
+  },
+  "fillActive": {
+    "message": "Autofill in progress"
+  },
+  "fill": {
+    "message": "Fill"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "saveNewLogin": {
+    "message": "Save new login?"
+  },
+  "updatePassword": {
+    "message": "Update password?"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "saveTo": {
+    "message": "Save to"
+  },
+  "dismiss": {
+    "message": "Dismiss"
+  },
+  "notRunning": {
+    "message": "Buddy isn't running"
+  },
+  "notInstalled": {
+    "message": "Buddy desktop app not found"
+  },
+  "notInstalledHint": {
+    "message": "The extension doesn't have a vault of its own. Install the Buddy desktop app to get started."
+  },
+  "getBuddy": {
+    "message": "Get Buddy at pwbuddy.com"
+  },
+  "open": {
+    "message": "Open"
+  },
+  "unlocked": {
+    "message": "Unlocked"
+  },
+  "locked": {
+    "message": "Locked"
+  },
+  "saveLoginFor": {
+    "message": "Save login for $TITLE$? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "updatePasswordFor": {
+    "message": "Update password for $TITLE$? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "notNow": {
+    "message": "Not now"
+  },
+  "saveFailed": {
+    "message": "Couldn't save. Try again."
+  },
+  "vaultLocked": {
+    "message": "Vault is locked"
+  },
+  "openToUnlock": {
+    "message": "Open Buddy to unlock"
+  },
+  "pairNeeded": {
+    "message": "Not connected to Buddy"
+  },
+  "pairWaiting": {
+    "message": "Approve the connection in the Buddy app…"
+  },
+  "connect": {
+    "message": "Connect"
+  },
+  "onboardHeading": {
+    "message": "Buddy is ready"
+  },
+  "onboardSub": {
+    "message": "A quick look at how it works."
+  },
+  "onboardVaultTitle": {
+    "message": "Your vault stays in the desktop app"
+  },
+  "onboardVaultBody": {
+    "message": "This extension has no vault of its own. It asks the Buddy app you unlock, and only for the fields a page can actually fill."
+  },
+  "onboardDiagramPage": {
+    "message": "Page"
+  },
+  "onboardDiagramExtension": {
+    "message": "Extension"
+  },
+  "onboardDiagramApp": {
+    "message": "Buddy app"
+  },
+  "onboardAccessTitle": {
+    "message": "Fill without leaving the page"
+  },
+  "onboardAccessBody": {
+    "message": "Allow Buddy on the sites you visit and a small picker appears on login fields. You can pause it per site whenever it gets in the way."
+  },
+  "onboardAccessAllow": {
+    "message": "Allow on all sites"
+  },
+  "onboardAccessGranted": {
+    "message": "Allowed. The picker is on."
+  },
+  "onboardToolbarTitle": {
+    "message": "Or fill from the toolbar"
+  },
+  "onboardToolbarBody": {
+    "message": "Click the Buddy icon on any page. This works whether or not you allow the above."
+  },
+  "onboardDone": {
+    "message": "Done"
+  },
+  "optionsHeading": {
+    "message": "Buddy settings"
+  },
+  "optionsAccessTitle": {
+    "message": "Site access"
+  },
+  "optionsAccessOn": {
+    "message": "Buddy can show the picker on the sites you visit."
+  },
+  "optionsAccessOff": {
+    "message": "Buddy only fills from the toolbar. Allow site access to get the in-page picker."
+  },
+  "optionsAccessAllow": {
+    "message": "Allow on all sites"
+  },
+  "optionsPausedTitle": {
+    "message": "Paused sites"
+  },
+  "optionsPausedEmpty": {
+    "message": "No sites paused. Pause one from the Buddy popup when the picker gets in the way."
+  },
+  "optionsResume": {
+    "message": "Resume"
+  },
+  "pauseOnSite": {
+    "message": "Pause on this site"
+  },
+  "resumeOnSite": {
+    "message": "Resume on this site"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "fillFramed": {
+    "message": "This site keeps its sign-in box in an embedded frame. Click the username field and pick from there."
+  },
+  "fillNoField": {
+    "message": "No sign-in field found on this page."
+  },
+  "fillAmbiguous": {
+    "message": "More than one sign-in form here. Click the field you want and pick from there."
+  },
+  "openPicker": {
+    "message": "Fill with Buddy"
+  },
+  "commandOpenPicker": {
+    "message": "Open the Buddy fill list on the focused field"
+  },
+  "onboardDemoLabel": {
+    "message": "Email"
+  },
+  "onboardDemoValue": {
+    "message": "you@example.com"
+  },
+  "onboardDemoCaption": {
+    "message": "Click the Buddy mark inside a sign-in field, or press Ctrl+Shift+L, to see your saved logins."
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "extDescription": {
+    "message": "Buddy डेस्कटॉप ऐप से लॉगिन स्वतः भरें।"
+  },
+  "popupSubtitle": {
+    "message": "पासवर्ड मैनेजर"
+  },
+  "versionMismatch": {
+    "message": "यह एक्सटेंशन और Buddy ऐप सिंक में नहीं हैं। ऑटोफ़िल चालू रखने के लिए दोनों को नवीनतम संस्करण में अपडेट करें।"
+  },
+  "noLogins": {
+    "message": "इस साइट के लिए कोई सहेजा गया लॉगिन नहीं"
+  },
+  "cards": {
+    "message": "कार्ड"
+  },
+  "addresses": {
+    "message": "पते"
+  },
+  "fillActive": {
+    "message": "ऑटोफ़िल चल रहा है"
+  },
+  "fill": {
+    "message": "भरें"
+  },
+  "cancel": {
+    "message": "रद्द करें"
+  },
+  "saveNewLogin": {
+    "message": "नया लॉगिन सहेजें?"
+  },
+  "updatePassword": {
+    "message": "पासवर्ड अपडेट करें?"
+  },
+  "save": {
+    "message": "सहेजें"
+  },
+  "saveTo": {
+    "message": "इसमें सहेजें"
+  },
+  "dismiss": {
+    "message": "खारिज करें"
+  },
+  "notRunning": {
+    "message": "Buddy नहीं चल रहा है"
+  },
+  "notInstalled": {
+    "message": "Buddy डेस्कटॉप ऐप नहीं मिला"
+  },
+  "notInstalledHint": {
+    "message": "एक्सटेंशन का अपना कोई वॉल्ट नहीं है। शुरू करने के लिए Buddy डेस्कटॉप ऐप इंस्टॉल करें।"
+  },
+  "getBuddy": {
+    "message": "pwbuddy.com से Buddy पाएं"
+  },
+  "open": {
+    "message": "खोलें"
+  },
+  "unlocked": {
+    "message": "अनलॉक है"
+  },
+  "locked": {
+    "message": "लॉक"
+  },
+  "saveLoginFor": {
+    "message": "$TITLE$ के लिए लॉगिन सहेजें? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "updatePasswordFor": {
+    "message": "$TITLE$ के लिए पासवर्ड अपडेट करें? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "notNow": {
+    "message": "अभी नहीं"
+  },
+  "saveFailed": {
+    "message": "सहेजा नहीं जा सका। फिर से कोशिश करें।"
+  },
+  "vaultLocked": {
+    "message": "वॉल्ट लॉक है"
+  },
+  "openToUnlock": {
+    "message": "अनलॉक करने के लिए Buddy खोलें"
+  },
+  "pairNeeded": {
+    "message": "Buddy से कनेक्ट नहीं है"
+  },
+  "pairWaiting": {
+    "message": "Buddy ऐप में कनेक्शन स्वीकृत करें…"
+  },
+  "connect": {
+    "message": "कनेक्ट करें"
+  },
+  "onboardHeading": {
+    "message": "Buddy तैयार है"
+  },
+  "onboardSub": {
+    "message": "यह कैसे काम करता है, एक झलक।"
+  },
+  "onboardVaultTitle": {
+    "message": "आपका वॉल्ट डेस्कटॉप ऐप में ही रहता है"
+  },
+  "onboardVaultBody": {
+    "message": "इस एक्सटेंशन का अपना कोई वॉल्ट नहीं है। यह उसी Buddy ऐप से पूछता है जिसे आप अनलॉक करते हैं, और केवल उन फ़ील्ड के लिए जिन्हें पेज सचमुच भर सकता है।"
+  },
+  "onboardDiagramPage": {
+    "message": "पेज"
+  },
+  "onboardDiagramExtension": {
+    "message": "एक्सटेंशन"
+  },
+  "onboardDiagramApp": {
+    "message": "Buddy ऐप"
+  },
+  "onboardAccessTitle": {
+    "message": "पेज छोड़े बिना भरें"
+  },
+  "onboardAccessBody": {
+    "message": "आप जिन साइटों पर जाते हैं वहाँ Buddy को अनुमति दें और लॉगिन फ़ील्ड पर एक छोटा चयनकर्ता दिखेगा। परेशानी होने पर इसे हर साइट के लिए रोका जा सकता है।"
+  },
+  "onboardAccessAllow": {
+    "message": "सभी साइटों पर अनुमति दें"
+  },
+  "onboardAccessGranted": {
+    "message": "अनुमति दी गई। चयनकर्ता चालू है।"
+  },
+  "onboardToolbarTitle": {
+    "message": "या टूलबार से भरें"
+  },
+  "onboardToolbarBody": {
+    "message": "किसी भी पेज पर Buddy आइकन पर क्लिक करें। ऊपर की अनुमति दें या न दें, यह काम करता है।"
+  },
+  "onboardDone": {
+    "message": "हो गया"
+  },
+  "optionsHeading": {
+    "message": "Buddy सेटिंग्स"
+  },
+  "optionsAccessTitle": {
+    "message": "साइट पहुँच"
+  },
+  "optionsAccessOn": {
+    "message": "Buddy आपकी देखी जाने वाली साइटों पर चयनकर्ता दिखा सकता है।"
+  },
+  "optionsAccessOff": {
+    "message": "Buddy केवल टूलबार से भरता है। पेज पर चयनकर्ता पाने के लिए साइट पहुँच दें।"
+  },
+  "optionsAccessAllow": {
+    "message": "सभी साइटों पर अनुमति दें"
+  },
+  "optionsPausedTitle": {
+    "message": "रोकी गई साइटें"
+  },
+  "optionsPausedEmpty": {
+    "message": "कोई साइट रोकी नहीं गई। चयनकर्ता परेशान करे तो Buddy पॉपअप से किसी साइट को रोकें।"
+  },
+  "optionsResume": {
+    "message": "फिर शुरू करें"
+  },
+  "pauseOnSite": {
+    "message": "इस साइट पर रोकें"
+  },
+  "resumeOnSite": {
+    "message": "इस साइट पर फिर शुरू करें"
+  },
+  "settings": {
+    "message": "सेटिंग्स"
+  },
+  "fillFramed": {
+    "message": "यह साइट अपना साइन-इन बॉक्स एक एम्बेडेड फ़्रेम में रखती है। यूज़रनेम फ़ील्ड पर क्लिक करें और वहीं से चुनें।"
+  },
+  "fillNoField": {
+    "message": "इस पेज पर कोई साइन-इन फ़ील्ड नहीं मिली।"
+  },
+  "fillAmbiguous": {
+    "message": "यहाँ एक से ज़्यादा साइन-इन फ़ॉर्म हैं। जिस फ़ील्ड में भरना है उस पर क्लिक करें और वहीं से चुनें।"
+  },
+  "openPicker": {
+    "message": "Buddy से भरें"
+  },
+  "commandOpenPicker": {
+    "message": "फ़ोकस किए गए फ़ील्ड पर Buddy की सूची खोलें"
+  },
+  "onboardDemoLabel": {
+    "message": "ईमेल"
+  },
+  "onboardDemoValue": {
+    "message": "aap@udaharan.com"
+  },
+  "onboardDemoCaption": {
+    "message": "सेव किए गए लॉगिन देखने के लिए साइन-इन फ़ील्ड के अंदर Buddy चिह्न पर क्लिक करें, या Ctrl+Shift+L दबाएँ।"
+  }
+}

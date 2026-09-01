@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #eef2fa;
+  --color-primary-100: #d5e0f2;
+  --color-primary-200: #b0c5e7;
+  --color-primary-300: #82a2d6;
+  --color-primary-400: #5880c3;
+  --color-primary-450: #4a73bc;
+  --color-primary-500: #3d67b4;
+  --color-primary-600: #365da3;
+  --color-primary-700: #2c4d88;
+  --color-primary-800: #1f3761;
+  --color-primary-900: #14233e;
+  --color-primary-950: #0b1525;
+}
+
+/* Both surfaces follow the system scheme. `dark:` is Tailwind's default
+   prefers-color-scheme variant, and media queries resolve inside shadow DOM,
+   so the injected picker themes itself the same way the popup does. */
+:host,
+:root {
+  color-scheme: light dark;
+}

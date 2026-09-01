@@ -1,0 +1,211 @@
+{
+  "extDescription": {
+    "message": "Preencha logins automaticamente a partir do aplicativo Buddy para desktop."
+  },
+  "popupSubtitle": {
+    "message": "Gerenciador de senhas"
+  },
+  "versionMismatch": {
+    "message": "Esta extensão e o aplicativo Buddy estão fora de sincronia. Atualize ambos para a versão mais recente para manter o preenchimento automático funcionando."
+  },
+  "noLogins": {
+    "message": "Nenhum login salvo para este site"
+  },
+  "cards": {
+    "message": "Cartões"
+  },
+  "addresses": {
+    "message": "Endereços"
+  },
+  "fillActive": {
+    "message": "Preenchimento automático em andamento"
+  },
+  "fill": {
+    "message": "Preencher"
+  },
+  "cancel": {
+    "message": "Cancelar"
+  },
+  "saveNewLogin": {
+    "message": "Salvar novo login?"
+  },
+  "updatePassword": {
+    "message": "Atualizar a senha?"
+  },
+  "save": {
+    "message": "Salvar"
+  },
+  "saveTo": {
+    "message": "Salvar em"
+  },
+  "dismiss": {
+    "message": "Dispensar"
+  },
+  "notRunning": {
+    "message": "O Buddy não está em execução"
+  },
+  "notInstalled": {
+    "message": "App desktop do Buddy não encontrado"
+  },
+  "notInstalledHint": {
+    "message": "A extensão não tem um cofre próprio. Instale o app desktop do Buddy para começar."
+  },
+  "getBuddy": {
+    "message": "Baixe o Buddy em pwbuddy.com"
+  },
+  "open": {
+    "message": "Abrir"
+  },
+  "unlocked": {
+    "message": "Desbloqueado"
+  },
+  "locked": {
+    "message": "Bloqueados"
+  },
+  "saveLoginFor": {
+    "message": "Salvar login para $TITLE$? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "updatePasswordFor": {
+    "message": "Atualizar a senha de $TITLE$? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "notNow": {
+    "message": "Agora não"
+  },
+  "saveFailed": {
+    "message": "Não foi possível salvar. Tente novamente."
+  },
+  "vaultLocked": {
+    "message": "O cofre está bloqueado"
+  },
+  "openToUnlock": {
+    "message": "Abra o Buddy para desbloquear"
+  },
+  "pairNeeded": {
+    "message": "Não conectado ao Buddy"
+  },
+  "pairWaiting": {
+    "message": "Aprove a conexão no aplicativo Buddy…"
+  },
+  "connect": {
+    "message": "Conectar"
+  },
+  "onboardHeading": {
+    "message": "O Buddy está pronto"
+  },
+  "onboardSub": {
+    "message": "Uma olhada rápida em como funciona."
+  },
+  "onboardVaultTitle": {
+    "message": "Seu cofre fica no aplicativo para computador"
+  },
+  "onboardVaultBody": {
+    "message": "Esta extensão não tem cofre próprio. Ela pergunta ao aplicativo Buddy que você desbloqueia, e apenas pelos campos que uma página realmente consegue preencher."
+  },
+  "onboardDiagramPage": {
+    "message": "Página"
+  },
+  "onboardDiagramExtension": {
+    "message": "Extensão"
+  },
+  "onboardDiagramApp": {
+    "message": "Aplicativo Buddy"
+  },
+  "onboardAccessTitle": {
+    "message": "Preencha sem sair da página"
+  },
+  "onboardAccessBody": {
+    "message": "Permita o Buddy nos sites que você visita e um pequeno seletor aparece nos campos de login. Você pode pausá-lo por site sempre que atrapalhar."
+  },
+  "onboardAccessAllow": {
+    "message": "Permitir em todos os sites"
+  },
+  "onboardAccessGranted": {
+    "message": "Permitido. O seletor está ativo."
+  },
+  "onboardToolbarTitle": {
+    "message": "Ou preencha pela barra de ferramentas"
+  },
+  "onboardToolbarBody": {
+    "message": "Clique no ícone do Buddy em qualquer página. Isso funciona permitindo o acima ou não."
+  },
+  "onboardDone": {
+    "message": "Concluído"
+  },
+  "optionsHeading": {
+    "message": "Configurações do Buddy"
+  },
+  "optionsAccessTitle": {
+    "message": "Acesso a sites"
+  },
+  "optionsAccessOn": {
+    "message": "O Buddy pode mostrar o seletor nos sites que você visita."
+  },
+  "optionsAccessOff": {
+    "message": "O Buddy só preenche pela barra de ferramentas. Permita o acesso a sites para ter o seletor na página."
+  },
+  "optionsAccessAllow": {
+    "message": "Permitir em todos os sites"
+  },
+  "optionsPausedTitle": {
+    "message": "Sites pausados"
+  },
+  "optionsPausedEmpty": {
+    "message": "Nenhum site pausado. Pause um pela janela do Buddy quando o seletor atrapalhar."
+  },
+  "optionsResume": {
+    "message": "Retomar"
+  },
+  "pauseOnSite": {
+    "message": "Pausar neste site"
+  },
+  "resumeOnSite": {
+    "message": "Retomar neste site"
+  },
+  "settings": {
+    "message": "Configurações"
+  },
+  "fillFramed": {
+    "message": "Este site mantém o formulário de login em um quadro incorporado. Clique no campo de usuário e escolha por ali."
+  },
+  "fillNoField": {
+    "message": "Nenhum campo de login encontrado nesta página."
+  },
+  "fillAmbiguous": {
+    "message": "Há mais de um formulário de login aqui. Clique no campo desejado e escolha por ali."
+  },
+  "openPicker": {
+    "message": "Preencher com o Buddy"
+  },
+  "commandOpenPicker": {
+    "message": "Abrir a lista do Buddy no campo em foco"
+  },
+  "onboardDemoLabel": {
+    "message": "E-mail"
+  },
+  "onboardDemoValue": {
+    "message": "voce@exemplo.com"
+  },
+  "onboardDemoCaption": {
+    "message": "Clique na marca do Buddy dentro de um campo de login, ou pressione Ctrl+Shift+L, para ver seus logins salvos."
+  }
+}

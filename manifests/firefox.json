@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "Buddy Password Manager",
+  "version": "1.0.0",
+  "description": "__MSG_extDescription__",
+  "default_locale": "en",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "extension@pwbuddy.com",
+      "_comment": "128 is the floor for optional_host_permissions in Firefox MV3. Below it there is no way to grant site access at all, so the picker could never appear.",
+      "strict_min_version": "128.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "permissions": [
+    "nativeMessaging",
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "optional_host_permissions": [
+    "https://*/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "scripts": [
+      "src/background/worker.ts"
+    ],
+    "type": "module"
+  },
+  "commands": {
+    "open-picker": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L",
+        "mac": "Command+Shift+L"
+      },
+      "description": "__MSG_commandOpenPicker__"
+    }
+  },
+  "action": {
+    "default_title": "Buddy",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png"
+    }
+  }
+}

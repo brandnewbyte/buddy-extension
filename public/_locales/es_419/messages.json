@@ -1,0 +1,211 @@
+{
+  "extDescription": {
+    "message": "Autocompleta inicios de sesión desde la aplicación de escritorio Buddy."
+  },
+  "popupSubtitle": {
+    "message": "Administrador de contraseñas"
+  },
+  "versionMismatch": {
+    "message": "Esta extensión y la aplicación Buddy no están sincronizadas. Actualiza ambas a la última versión para que el autocompletado siga funcionando."
+  },
+  "noLogins": {
+    "message": "No hay inicios de sesión guardados para este sitio"
+  },
+  "cards": {
+    "message": "Tarjetas"
+  },
+  "addresses": {
+    "message": "Direcciones"
+  },
+  "fillActive": {
+    "message": "Autocompletado en curso"
+  },
+  "fill": {
+    "message": "Rellenar"
+  },
+  "cancel": {
+    "message": "Cancelar"
+  },
+  "saveNewLogin": {
+    "message": "¿Guardar nuevo inicio de sesión?"
+  },
+  "updatePassword": {
+    "message": "¿Actualizar la contraseña?"
+  },
+  "save": {
+    "message": "Guardar"
+  },
+  "saveTo": {
+    "message": "Guardar en"
+  },
+  "dismiss": {
+    "message": "Descartar"
+  },
+  "notRunning": {
+    "message": "Buddy no está en ejecución"
+  },
+  "notInstalled": {
+    "message": "No se encontró la app de escritorio de Buddy"
+  },
+  "notInstalledHint": {
+    "message": "La extensión no tiene su propia bóveda. Instala la app de escritorio de Buddy para comenzar."
+  },
+  "getBuddy": {
+    "message": "Obtén Buddy en pwbuddy.com"
+  },
+  "open": {
+    "message": "Abrir"
+  },
+  "unlocked": {
+    "message": "Desbloqueada"
+  },
+  "locked": {
+    "message": "Bloqueadas"
+  },
+  "saveLoginFor": {
+    "message": "¿Guardar inicio de sesión para $TITLE$? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "updatePasswordFor": {
+    "message": "¿Actualizar la contraseña de $TITLE$? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "notNow": {
+    "message": "Ahora no"
+  },
+  "saveFailed": {
+    "message": "No se pudo guardar. Inténtalo de nuevo."
+  },
+  "vaultLocked": {
+    "message": "La bóveda está bloqueada"
+  },
+  "openToUnlock": {
+    "message": "Abre Buddy para desbloquear"
+  },
+  "pairNeeded": {
+    "message": "Sin conexión con Buddy"
+  },
+  "pairWaiting": {
+    "message": "Aprueba la conexión en la app de Buddy…"
+  },
+  "connect": {
+    "message": "Conectar"
+  },
+  "onboardHeading": {
+    "message": "Buddy está listo"
+  },
+  "onboardSub": {
+    "message": "Un vistazo rápido a cómo funciona."
+  },
+  "onboardVaultTitle": {
+    "message": "Tu bóveda se queda en la app de escritorio"
+  },
+  "onboardVaultBody": {
+    "message": "Esta extensión no tiene bóveda propia. Le pregunta a la app de Buddy que tú desbloqueas, y solo por los campos que una página realmente puede llenar."
+  },
+  "onboardDiagramPage": {
+    "message": "Página"
+  },
+  "onboardDiagramExtension": {
+    "message": "Extensión"
+  },
+  "onboardDiagramApp": {
+    "message": "App de Buddy"
+  },
+  "onboardAccessTitle": {
+    "message": "Llena sin salir de la página"
+  },
+  "onboardAccessBody": {
+    "message": "Permite Buddy en los sitios que visitas y aparecerá un pequeño selector en los campos de inicio de sesión. Puedes pausarlo por sitio cuando estorbe."
+  },
+  "onboardAccessAllow": {
+    "message": "Permitir en todos los sitios"
+  },
+  "onboardAccessGranted": {
+    "message": "Permitido. El selector está activo."
+  },
+  "onboardToolbarTitle": {
+    "message": "O llena desde la barra de herramientas"
+  },
+  "onboardToolbarBody": {
+    "message": "Haz clic en el ícono de Buddy en cualquier página. Esto funciona permitas o no lo anterior."
+  },
+  "onboardDone": {
+    "message": "Listo"
+  },
+  "optionsHeading": {
+    "message": "Configuración de Buddy"
+  },
+  "optionsAccessTitle": {
+    "message": "Acceso a sitios"
+  },
+  "optionsAccessOn": {
+    "message": "Buddy puede mostrar el selector en los sitios que visitas."
+  },
+  "optionsAccessOff": {
+    "message": "Buddy solo llena desde la barra de herramientas. Permite el acceso a sitios para tener el selector en la página."
+  },
+  "optionsAccessAllow": {
+    "message": "Permitir en todos los sitios"
+  },
+  "optionsPausedTitle": {
+    "message": "Sitios pausados"
+  },
+  "optionsPausedEmpty": {
+    "message": "Ningún sitio pausado. Pausa uno desde la ventana de Buddy cuando el selector estorbe."
+  },
+  "optionsResume": {
+    "message": "Reanudar"
+  },
+  "pauseOnSite": {
+    "message": "Pausar en este sitio"
+  },
+  "resumeOnSite": {
+    "message": "Reanudar en este sitio"
+  },
+  "settings": {
+    "message": "Configuración"
+  },
+  "fillFramed": {
+    "message": "Este sitio tiene su cuadro de inicio de sesión en un marco incrustado. Haz clic en el campo de usuario y elige desde ahí."
+  },
+  "fillNoField": {
+    "message": "No se encontró ningún campo de inicio de sesión en esta página."
+  },
+  "fillAmbiguous": {
+    "message": "Hay más de un formulario de inicio de sesión aquí. Haz clic en el campo que quieras y elige desde ahí."
+  },
+  "openPicker": {
+    "message": "Llenar con Buddy"
+  },
+  "commandOpenPicker": {
+    "message": "Abrir la lista de Buddy en el campo enfocado"
+  },
+  "onboardDemoLabel": {
+    "message": "Correo"
+  },
+  "onboardDemoValue": {
+    "message": "tu@ejemplo.com"
+  },
+  "onboardDemoCaption": {
+    "message": "Haz clic en la marca de Buddy dentro de un campo de inicio de sesión, o presiona Ctrl+Mayús+L, para ver tus accesos guardados."
+  }
+}

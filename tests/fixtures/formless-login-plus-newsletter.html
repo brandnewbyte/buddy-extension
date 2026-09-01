@@ -1,0 +1,17 @@
+<!-- Formless login (step 1, no password yet) plus a footer newsletter: two
+     orphan inputs whose nearest shared ancestor is the page root, so they
+     collapse into one group and the username pick has to separate them on
+     score alone. -->
+<div id="app">
+  <div class="login-card">
+    <h1>Sign in</h1>
+    <input type="text" name="username" data-expect="username">
+    <button>Next</button>
+  </div>
+  <footer>
+    <form action="/newsletter">
+      <input type="email" name="email" placeholder="Get our newsletter" data-decoy data-no-picker>
+      <button>Subscribe</button>
+    </form>
+  </footer>
+</div>

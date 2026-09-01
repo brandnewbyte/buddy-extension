@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Buddy Password Manager",
+  "version": "1.0.0",
+  "description": "__MSG_extDescription__",
+  "default_locale": "en",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvMuOBQb83jQ0DqAElKMQfAgMun4k6hUPU7hl87hShgG/oyRAw4qypcsNxbVr8b988m4ZS11slaJSNXZajKXp/A6klCJyX8e7I4M7iLsCP7E2XdQ5aDUENX8QsF26KJzszk3eJ20bNXu8HjGhPrbXvl75C7QTjo+xdQjrxGcwEuqwqIZTWcVM1ydadHzoD9vrhCWnSjuu29HiJUeO4BU4JsEIzs1swHpiInPTuiS4JZSUBiq9Am3ka54tutESMPw9o1cgJZ6Q+dtjhbSeBld9Pxk4pUUTAZsvqjtj9ZptbdQ9SfZYJJV3Qe9NsCGp7cZLq2EqU0iLxhLKGzQsvX5R6QIDAQAB",
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "permissions": [
+    "nativeMessaging",
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "optional_host_permissions": [
+    "https://*/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "src/background/worker.ts",
+    "type": "module"
+  },
+  "commands": {
+    "open-picker": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L",
+        "mac": "Command+Shift+L"
+      },
+      "description": "__MSG_commandOpenPicker__"
+    }
+  },
+  "action": {
+    "default_title": "Buddy",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png"
+    }
+  }
+}

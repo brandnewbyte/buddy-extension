@@ -1,0 +1,6 @@
+{
+  "_comment": "The desktop identity this extension is built against, and the two ids the desktop's native messaging host is built to accept. The desktop keeps its own copy of this file at the same path and compiles it in; this one is a vendored pin, not a shared source. The two must be changed together by hand. Locally, scripts/verify-release.mjs holds the package to it: the Chromium id derived from manifests/chrome.json's key, the gecko id in manifests/firefox.json, and the host name the built worker calls connectNative with must all match what is here. If they disagree the extension cannot reach the desktop at all, so the failure is total and immediate rather than subtle.",
+  "native_host_name": "com.brandnewbyte.buddy",
+  "chrome_extension_id": "gbghjcehkafiiobmokljehkeedbcmpea",
+  "firefox_extension_id": "extension@pwbuddy.com"
+}

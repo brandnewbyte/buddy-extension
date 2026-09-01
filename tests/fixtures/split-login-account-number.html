@@ -1,0 +1,51 @@
+<!-- treasurydirect.gov account-number step, captured verbatim. A password-less
+     first step whose only evidence is name="username" and the form's own id;
+     the submit button says "Submit", not "Sign in". Also a bare unstyled input,
+     which Chrome renders about 21px tall — the size that the glyph placement
+     floor used to exclude. -->
+<form action="/RS/UN-Submit.do" method="post" id="Login" name="Login">
+		
+			<h1>Access Your Account &raquo; <strong>Account Number</strong></h1>
+	
+			<div class="dividerline">&nbsp;</div>
+
+			<div id="infomessage"><p><strong>Important message:</strong><br /><br /> WARNING WARNING WARNING<br />
+			You are accessing a U.S. Government information system (which includes computers, computer networks, and
+			all devices and storage media attached to a Treasury network or to a computer on such network) that is
+			provided for U.S. Government-authorized use only. By using this system, you understand and consent that
+			there is no reasonable expectation of privacy regarding any communications or information transiting, stored
+			on, or traveling to or from this system. The government routinely monitors and may, for any lawful
+			government purpose, intercept, search, and seize any communication or information transiting, stored on, or
+			traveling to or from this information system and such information may be disclosed or used for any lawful
+			government purpose.
+			</div>
+
+			<p>Please enter your Account Number.</p>
+			<table class="lineup">
+				<tr>
+					<td class="alignright" valign="top"><strong>Account	Number:</strong></td>
+					<td rowspan="2" class="fade">&nbsp;</td>
+					
+					<td valign="top"><input type="text" name="username" size="20" maxlength="20" data-expect="username"/> (with or without hyphens)</td>
+				</tr>
+			</table>
+			
+			<p style="margin-left:250px;">
+				<a href="/RS/UN-Forgot.do">Forgot your Account Number?</a>
+			</p>
+	
+			<br />
+
+			<p>		
+			<input class="action" type="submit" name="submit" value="Submit" />
+			</p>
+			
+			<div class="dividerline">&nbsp;</div>
+
+			<p><span class="emphasis">New Customer?</span> <a
+				href="/RS/UN-AccountCreate.do">Open a new Account</a>.
+			</p>
+			<!-- Hidden Variables -->
+			<input type="hidden" name="_csrf" value="fc6e373b-4b40-4d1d-9d93-dafbc0ed61ba" />
+
+		</form>

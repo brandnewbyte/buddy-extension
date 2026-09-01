@@ -1,0 +1,123 @@
+# Tag-triggered release.
+#
+# Builds the store packages, proves they are reproducible, and publishes them
+# with their hashes. The point is that what you upload to a store is the
+# artifact CI built from a tag, and that the hash you publish is one anyone can
+# reproduce from the same tag. Uploading from a laptop breaks both.
+#
+# Tag as v<version>, matching package.json:
+#
+#   git tag v1.0.0 && git push origin v1.0.0
+#
+# The release is created as a draft so you can add notes and publish it when
+# the stores have approved. Drop --draft below to publish immediately.
+
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # A tag disagreeing with the manifest would publish a release labelled one
+      # thing and containing another. The release gate already holds both
+      # manifests to package.json, so checking the tag against that covers all
+      # three version strings.
+      - name: Tag matches package version
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          PKG="$(node -p "require('./package.json').version")"
+          if [ "$TAG" != "$PKG" ]; then
+            echo "Tag $GITHUB_REF_NAME implies version $TAG, but package.json says $PKG." >&2
+            exit 1
+          fi
+          echo "version=$PKG" >> "$GITHUB_ENV"
+
+      - name: Typecheck, test, build, gate
+        run: npm run release:check
+
+      # What AMO would reject must fail here, not there.
+      - name: Lint Firefox package
+        run: npx web-ext lint --source-dir dist/firefox --warnings-as-errors=false
+
+      - name: Package
+        run: npm run package:all
+
+      # Publishing a hash is only worth doing if the hash is stable. Package a
+      # second time from scratch and refuse to release if anything moved.
+      - name: Prove reproducible
+        run: |
+          shasum -a 256 releases/*.zip | sed 's|releases/||' > "$RUNNER_TEMP/first"
+          rm -rf dist releases
+          npm run package:all
+          shasum -a 256 releases/*.zip | sed 's|releases/||' > "$RUNNER_TEMP/second"
+          if ! diff -u "$RUNNER_TEMP/first" "$RUNNER_TEMP/second"; then
+            echo "Packaging is not reproducible; refusing to publish." >&2
+            exit 1
+          fi
+          cp "$RUNNER_TEMP/second" releases/SHA256SUMS
+          cat releases/SHA256SUMS
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ env.version }}
+        run: |
+          {
+            echo "Browser extension v${VERSION}."
+            echo
+            echo '## Verifying these packages'
+            echo
+            echo 'These were built from this tag by CI. The build is reproducible: the same'
+            echo 'source produces byte-identical packages on any machine, from any directory.'
+            echo
+            echo '```bash'
+            echo "git checkout ${GITHUB_REF_NAME}"
+            echo 'npm ci'
+            echo 'npm run package:all'
+            echo 'shasum -a 256 releases/*.zip'
+            echo '```'
+            echo
+            echo 'Your hashes should match the ones below, and those should match what the'
+            echo 'Chrome Web Store and AMO serve. If they do not, please report it.'
+            echo
+            echo '```'
+            cat releases/SHA256SUMS
+            echo '```'
+            echo
+            echo 'The Chrome package has its `key` stripped, as the store requires. That is'
+            echo 'the only field by which it differs from `dist/chrome/`, so compare zip'
+            echo 'against zip rather than zip against a build directory.'
+          } > "$RUNNER_TEMP/notes.md"
+
+          FLAGS=(--draft)
+          case "$GITHUB_REF_NAME" in
+            *-*) FLAGS+=(--prerelease) ;;
+          esac
+
+          gh release create "$GITHUB_REF_NAME" \
+            "${FLAGS[@]}" \
+            --title "v${VERSION}" \
+            --notes-file "$RUNNER_TEMP/notes.md" \
+            releases/buddy-chrome.zip \
+            releases/buddy-firefox.zip \
+            releases/SHA256SUMS

@@ -1,0 +1,18 @@
+<!-- Regression: one <form> wrapping the whole page (ASP.NET WebForms and
+     plenty of CMS themes do this), so every input on the page lands in a
+     single group. Username used to be a group-wide argmax and the footer's
+     type=email outscored the real login field. -->
+<form id="form1" action="/postback">
+  <nav>
+    <input type="text" name="q" placeholder="Search" data-decoy data-no-picker>
+  </nav>
+  <div class="login">
+    <input type="text" name="username" data-expect="username">
+    <input type="password" name="password" data-expect="password">
+    <button>Log in</button>
+  </div>
+  <footer>
+    <input type="email" name="newsletter" placeholder="Get our newsletter" data-decoy data-no-picker>
+    <button>Subscribe</button>
+  </footer>
+</form>

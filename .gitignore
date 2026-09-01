@@ -1,0 +1,22 @@
+# Build output. Both targets are reproducible from source; the release gate
+# runs against them, but nothing here is committed.
+dist/
+dist-ssr/
+releases/
+
+# Chromium packing key. The public half is pinned in manifests/chrome.json and
+# the extension id derives from it; the private half never enters the repo.
+*.pem
+
+node_modules/
+
+logs
+*.log
+npm-debug.log*
+
+*.local
+.claude
+.DS_Store
+.idea
+.vscode/*
+!.vscode/extensions.json

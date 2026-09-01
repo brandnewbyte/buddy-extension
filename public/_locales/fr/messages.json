@@ -1,0 +1,211 @@
+{
+  "extDescription": {
+    "message": "Remplissez automatiquement vos identifiants depuis l'application de bureau Buddy."
+  },
+  "popupSubtitle": {
+    "message": "Gestionnaire de mots de passe"
+  },
+  "versionMismatch": {
+    "message": "Cette extension et l'application Buddy ne sont plus synchronisées. Mettez les deux à jour vers la dernière version pour que le remplissage automatique continue de fonctionner."
+  },
+  "noLogins": {
+    "message": "Aucun identifiant enregistré pour ce site"
+  },
+  "cards": {
+    "message": "Cartes"
+  },
+  "addresses": {
+    "message": "Adresses"
+  },
+  "fillActive": {
+    "message": "Remplissage automatique en cours"
+  },
+  "fill": {
+    "message": "Remplir"
+  },
+  "cancel": {
+    "message": "Annuler"
+  },
+  "saveNewLogin": {
+    "message": "Enregistrer ce nouvel identifiant ?"
+  },
+  "updatePassword": {
+    "message": "Mettre à jour le mot de passe ?"
+  },
+  "save": {
+    "message": "Enregistrer"
+  },
+  "saveTo": {
+    "message": "Enregistrer dans"
+  },
+  "dismiss": {
+    "message": "Ignorer"
+  },
+  "notRunning": {
+    "message": "Buddy n'est pas lancé"
+  },
+  "notInstalled": {
+    "message": "Application de bureau Buddy introuvable"
+  },
+  "notInstalledHint": {
+    "message": "L'extension n'a pas de coffre à elle. Installez l'application de bureau Buddy pour commencer."
+  },
+  "getBuddy": {
+    "message": "Obtenir Buddy sur pwbuddy.com"
+  },
+  "open": {
+    "message": "Ouvrir"
+  },
+  "unlocked": {
+    "message": "Déverrouillé"
+  },
+  "locked": {
+    "message": "Verrouillés"
+  },
+  "saveLoginFor": {
+    "message": "Enregistrer l'identifiant pour $TITLE$ ? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "updatePasswordFor": {
+    "message": "Mettre à jour le mot de passe pour $TITLE$ ? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "notNow": {
+    "message": "Pas maintenant"
+  },
+  "saveFailed": {
+    "message": "Échec de l'enregistrement. Réessayez."
+  },
+  "vaultLocked": {
+    "message": "Le coffre est verrouillé"
+  },
+  "openToUnlock": {
+    "message": "Ouvrez Buddy pour déverrouiller"
+  },
+  "pairNeeded": {
+    "message": "Non connecté à Buddy"
+  },
+  "pairWaiting": {
+    "message": "Approuvez la connexion dans l’application Buddy…"
+  },
+  "connect": {
+    "message": "Connecter"
+  },
+  "onboardHeading": {
+    "message": "Buddy est prêt"
+  },
+  "onboardSub": {
+    "message": "Un aperçu rapide du fonctionnement."
+  },
+  "onboardVaultTitle": {
+    "message": "Votre coffre reste dans l’application de bureau"
+  },
+  "onboardVaultBody": {
+    "message": "Cette extension n’a pas de coffre à elle. Elle interroge l’application Buddy que vous déverrouillez, et uniquement pour les champs qu’une page peut réellement remplir."
+  },
+  "onboardDiagramPage": {
+    "message": "Page"
+  },
+  "onboardDiagramExtension": {
+    "message": "Extension"
+  },
+  "onboardDiagramApp": {
+    "message": "Application Buddy"
+  },
+  "onboardAccessTitle": {
+    "message": "Remplir sans quitter la page"
+  },
+  "onboardAccessBody": {
+    "message": "Autorisez Buddy sur les sites que vous visitez et un petit sélecteur apparaît sur les champs de connexion. Vous pouvez le suspendre site par site s’il vous gêne."
+  },
+  "onboardAccessAllow": {
+    "message": "Autoriser sur tous les sites"
+  },
+  "onboardAccessGranted": {
+    "message": "Autorisé. Le sélecteur est actif."
+  },
+  "onboardToolbarTitle": {
+    "message": "Ou remplir depuis la barre d’outils"
+  },
+  "onboardToolbarBody": {
+    "message": "Cliquez sur l’icône Buddy sur n’importe quelle page. Cela fonctionne que vous autorisiez ce qui précède ou non."
+  },
+  "onboardDone": {
+    "message": "Terminé"
+  },
+  "optionsHeading": {
+    "message": "Paramètres de Buddy"
+  },
+  "optionsAccessTitle": {
+    "message": "Accès aux sites"
+  },
+  "optionsAccessOn": {
+    "message": "Buddy peut afficher le sélecteur sur les sites que vous visitez."
+  },
+  "optionsAccessOff": {
+    "message": "Buddy ne remplit que depuis la barre d’outils. Autorisez l’accès aux sites pour avoir le sélecteur dans la page."
+  },
+  "optionsAccessAllow": {
+    "message": "Autoriser sur tous les sites"
+  },
+  "optionsPausedTitle": {
+    "message": "Sites suspendus"
+  },
+  "optionsPausedEmpty": {
+    "message": "Aucun site suspendu. Suspendez-en un depuis la fenêtre Buddy si le sélecteur vous gêne."
+  },
+  "optionsResume": {
+    "message": "Reprendre"
+  },
+  "pauseOnSite": {
+    "message": "Suspendre sur ce site"
+  },
+  "resumeOnSite": {
+    "message": "Reprendre sur ce site"
+  },
+  "settings": {
+    "message": "Paramètres"
+  },
+  "fillFramed": {
+    "message": "Ce site place son formulaire de connexion dans un cadre intégré. Cliquez dans le champ identifiant et choisissez depuis là."
+  },
+  "fillNoField": {
+    "message": "Aucun champ de connexion trouvé sur cette page."
+  },
+  "fillAmbiguous": {
+    "message": "Il y a plusieurs formulaires de connexion ici. Cliquez dans le champ voulu et choisissez depuis là."
+  },
+  "openPicker": {
+    "message": "Remplir avec Buddy"
+  },
+  "commandOpenPicker": {
+    "message": "Ouvrir la liste Buddy sur le champ sélectionné"
+  },
+  "onboardDemoLabel": {
+    "message": "E-mail"
+  },
+  "onboardDemoValue": {
+    "message": "vous@exemple.fr"
+  },
+  "onboardDemoCaption": {
+    "message": "Cliquez sur la marque Buddy dans un champ de connexion, ou appuyez sur Ctrl+Maj+L, pour voir vos identifiants enregistrés."
+  }
+}

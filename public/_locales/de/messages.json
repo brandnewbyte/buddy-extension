@@ -1,0 +1,211 @@
+{
+  "extDescription": {
+    "message": "Logins automatisch aus der Buddy-Desktop-App ausfüllen."
+  },
+  "popupSubtitle": {
+    "message": "Passwort-Manager"
+  },
+  "versionMismatch": {
+    "message": "Diese Erweiterung und die Buddy-App sind nicht mehr synchron. Aktualisieren Sie beide auf die neueste Version, damit das automatische Ausfüllen weiter funktioniert."
+  },
+  "noLogins": {
+    "message": "Keine gespeicherten Logins für diese Seite"
+  },
+  "cards": {
+    "message": "Karten"
+  },
+  "addresses": {
+    "message": "Adressen"
+  },
+  "fillActive": {
+    "message": "Automatisches Ausfüllen läuft"
+  },
+  "fill": {
+    "message": "Ausfüllen"
+  },
+  "cancel": {
+    "message": "Abbrechen"
+  },
+  "saveNewLogin": {
+    "message": "Neues Login speichern?"
+  },
+  "updatePassword": {
+    "message": "Passwort aktualisieren?"
+  },
+  "save": {
+    "message": "Speichern"
+  },
+  "saveTo": {
+    "message": "Speichern in"
+  },
+  "dismiss": {
+    "message": "Verwerfen"
+  },
+  "notRunning": {
+    "message": "Buddy läuft nicht"
+  },
+  "notInstalled": {
+    "message": "Buddy Desktop-App nicht gefunden"
+  },
+  "notInstalledHint": {
+    "message": "Die Erweiterung hat keinen eigenen Tresor. Installiere die Buddy Desktop-App, um loszulegen."
+  },
+  "getBuddy": {
+    "message": "Buddy auf pwbuddy.com holen"
+  },
+  "open": {
+    "message": "Öffnen"
+  },
+  "unlocked": {
+    "message": "Entsperrt"
+  },
+  "locked": {
+    "message": "Gesperrt"
+  },
+  "saveLoginFor": {
+    "message": "Login für $TITLE$ speichern? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "updatePasswordFor": {
+    "message": "Passwort für $TITLE$ aktualisieren? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "notNow": {
+    "message": "Nicht jetzt"
+  },
+  "saveFailed": {
+    "message": "Speichern fehlgeschlagen. Bitte erneut versuchen."
+  },
+  "vaultLocked": {
+    "message": "Tresor ist gesperrt"
+  },
+  "openToUnlock": {
+    "message": "Buddy öffnen zum Entsperren"
+  },
+  "pairNeeded": {
+    "message": "Nicht mit Buddy verbunden"
+  },
+  "pairWaiting": {
+    "message": "Bestätigen Sie die Verbindung in der Buddy-App…"
+  },
+  "connect": {
+    "message": "Verbinden"
+  },
+  "onboardHeading": {
+    "message": "Buddy ist bereit"
+  },
+  "onboardSub": {
+    "message": "Kurz erklärt, wie es funktioniert."
+  },
+  "onboardVaultTitle": {
+    "message": "Dein Tresor bleibt in der Desktop-App"
+  },
+  "onboardVaultBody": {
+    "message": "Diese Erweiterung hat keinen eigenen Tresor. Sie fragt die Buddy-App, die du entsperrst, und nur nach den Feldern, die eine Seite wirklich ausfüllen kann."
+  },
+  "onboardDiagramPage": {
+    "message": "Seite"
+  },
+  "onboardDiagramExtension": {
+    "message": "Erweiterung"
+  },
+  "onboardDiagramApp": {
+    "message": "Buddy-App"
+  },
+  "onboardAccessTitle": {
+    "message": "Ausfüllen, ohne die Seite zu verlassen"
+  },
+  "onboardAccessBody": {
+    "message": "Erlaube Buddy auf den Seiten, die du besuchst, und in Anmeldefeldern erscheint eine kleine Auswahl. Du kannst sie pro Seite pausieren, wenn sie stört."
+  },
+  "onboardAccessAllow": {
+    "message": "Auf allen Seiten erlauben"
+  },
+  "onboardAccessGranted": {
+    "message": "Erlaubt. Die Auswahl ist aktiv."
+  },
+  "onboardToolbarTitle": {
+    "message": "Oder über die Symbolleiste ausfüllen"
+  },
+  "onboardToolbarBody": {
+    "message": "Klicke auf jeder Seite auf das Buddy-Symbol. Das funktioniert unabhängig davon, ob du das oben erlaubst."
+  },
+  "onboardDone": {
+    "message": "Fertig"
+  },
+  "optionsHeading": {
+    "message": "Buddy-Einstellungen"
+  },
+  "optionsAccessTitle": {
+    "message": "Website-Zugriff"
+  },
+  "optionsAccessOn": {
+    "message": "Buddy darf die Auswahl auf den Seiten anzeigen, die du besuchst."
+  },
+  "optionsAccessOff": {
+    "message": "Buddy füllt nur über die Symbolleiste aus. Erlaube den Website-Zugriff für die Auswahl direkt auf der Seite."
+  },
+  "optionsAccessAllow": {
+    "message": "Auf allen Seiten erlauben"
+  },
+  "optionsPausedTitle": {
+    "message": "Pausierte Websites"
+  },
+  "optionsPausedEmpty": {
+    "message": "Keine Websites pausiert. Pausiere eine im Buddy-Popup, wenn die Auswahl stört."
+  },
+  "optionsResume": {
+    "message": "Fortsetzen"
+  },
+  "pauseOnSite": {
+    "message": "Auf dieser Website pausieren"
+  },
+  "resumeOnSite": {
+    "message": "Auf dieser Website fortsetzen"
+  },
+  "settings": {
+    "message": "Einstellungen"
+  },
+  "fillFramed": {
+    "message": "Diese Seite hat ihr Anmeldefeld in einem eingebetteten Frame. Klicke ins Benutzerfeld und wähle dort aus."
+  },
+  "fillNoField": {
+    "message": "Auf dieser Seite wurde kein Anmeldefeld gefunden."
+  },
+  "fillAmbiguous": {
+    "message": "Hier gibt es mehrere Anmeldeformulare. Klicke das gewünschte Feld an und wähle dort aus."
+  },
+  "openPicker": {
+    "message": "Mit Buddy ausfüllen"
+  },
+  "commandOpenPicker": {
+    "message": "Die Buddy-Auswahl für das fokussierte Feld öffnen"
+  },
+  "onboardDemoLabel": {
+    "message": "E-Mail"
+  },
+  "onboardDemoValue": {
+    "message": "du@beispiel.de"
+  },
+  "onboardDemoCaption": {
+    "message": "Klicke im Anmeldefeld auf das Buddy-Zeichen oder drücke Strg+Umschalt+L, um deine gespeicherten Logins zu sehen."
+  }
+}

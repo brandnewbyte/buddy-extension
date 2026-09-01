@@ -1,0 +1,19 @@
+<!-- Regression: formless header search box + several page-level "Sign in"
+     buttons. The old code gave the orphan document.body as its container,
+     which absorbed every button on the page and outscored the real form. -->
+<header>
+  <nav>
+    <button>Sign in</button>
+    <input type="search" name="q" placeholder="Search" data-decoy>
+  </nav>
+</header>
+<section class="hero">
+  <button>Sign in to get started</button>
+</section>
+<main>
+  <form action="/login">
+    <input type="text" name="username" data-expect="username">
+    <input type="password" name="password" data-expect="password">
+    <button>Sign in</button>
+  </form>
+</main>

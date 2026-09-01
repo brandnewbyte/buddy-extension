@@ -1,0 +1,21 @@
+<!-- Same-document checkout: card fields as inputs, expiry split across
+     selects, plus a shipping address block. No login anywhere: an unanchored
+     login fill must not touch it (no data-expect for login types). Card and
+     address behavior is asserted in fill.test.ts directly. -->
+<form id="checkout" action="/pay">
+  <fieldset id="shipping">
+    <input type="text" name="ship_address1" placeholder="Street address">
+    <input type="text" name="ship_city" placeholder="City">
+    <select name="ship_state"><option value="">State</option><option value="CA">California</option><option value="NY">New York</option></select>
+    <input type="text" name="ship_zip" placeholder="ZIP">
+    <select name="ship_country"><option value="">Country</option><option value="US">United States</option><option value="CA">Canada</option></select>
+  </fieldset>
+  <fieldset id="payment">
+    <input type="text" name="cardnumber" autocomplete="cc-number">
+    <input type="text" name="card_holder" placeholder="Name on card">
+    <select name="exp_month"><option value="">MM</option><option value="1">01</option><option value="4">04</option><option value="12">12</option></select>
+    <select name="exp_year"><option value="">YY</option><option value="25">2025</option><option value="26">2026</option><option value="27">2027</option></select>
+    <input type="text" name="cvv" maxlength="4">
+  </fieldset>
+  <button>Pay now</button>
+</form>

@@ -1,0 +1,211 @@
+{
+  "extDescription": {
+    "message": "Compila automaticamente gli accessi dall'app desktop Buddy."
+  },
+  "popupSubtitle": {
+    "message": "Gestore di password"
+  },
+  "versionMismatch": {
+    "message": "Questa estensione e l'app Buddy non sono sincronizzate. Aggiorna entrambe all'ultima versione per continuare a usare la compilazione automatica."
+  },
+  "noLogins": {
+    "message": "Nessun accesso salvato per questo sito"
+  },
+  "cards": {
+    "message": "Carte"
+  },
+  "addresses": {
+    "message": "Indirizzi"
+  },
+  "fillActive": {
+    "message": "Compilazione automatica in corso"
+  },
+  "fill": {
+    "message": "Compila"
+  },
+  "cancel": {
+    "message": "Annulla"
+  },
+  "saveNewLogin": {
+    "message": "Salvare il nuovo accesso?"
+  },
+  "updatePassword": {
+    "message": "Aggiornare la password?"
+  },
+  "save": {
+    "message": "Salva"
+  },
+  "saveTo": {
+    "message": "Salva in"
+  },
+  "dismiss": {
+    "message": "Ignora"
+  },
+  "notRunning": {
+    "message": "Buddy non è in esecuzione"
+  },
+  "notInstalled": {
+    "message": "App desktop Buddy non trovata"
+  },
+  "notInstalledHint": {
+    "message": "L'estensione non ha una cassaforte propria. Installa l'app desktop Buddy per iniziare."
+  },
+  "getBuddy": {
+    "message": "Scarica Buddy su pwbuddy.com"
+  },
+  "open": {
+    "message": "Apri"
+  },
+  "unlocked": {
+    "message": "Sbloccata"
+  },
+  "locked": {
+    "message": "Bloccate"
+  },
+  "saveLoginFor": {
+    "message": "Salvare l'accesso per $TITLE$? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "updatePasswordFor": {
+    "message": "Aggiornare la password per $TITLE$? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "notNow": {
+    "message": "Non ora"
+  },
+  "saveFailed": {
+    "message": "Salvataggio non riuscito. Riprova."
+  },
+  "vaultLocked": {
+    "message": "La cassaforte è bloccata"
+  },
+  "openToUnlock": {
+    "message": "Apri Buddy per sbloccare"
+  },
+  "pairNeeded": {
+    "message": "Non connesso a Buddy"
+  },
+  "pairWaiting": {
+    "message": "Approva la connessione nell’app Buddy…"
+  },
+  "connect": {
+    "message": "Connetti"
+  },
+  "onboardHeading": {
+    "message": "Buddy è pronto"
+  },
+  "onboardSub": {
+    "message": "Uno sguardo veloce a come funziona."
+  },
+  "onboardVaultTitle": {
+    "message": "La tua cassaforte resta nell’app desktop"
+  },
+  "onboardVaultBody": {
+    "message": "Questa estensione non ha una cassaforte propria. Interroga l’app Buddy che sblocchi tu, e solo per i campi che una pagina può davvero compilare."
+  },
+  "onboardDiagramPage": {
+    "message": "Pagina"
+  },
+  "onboardDiagramExtension": {
+    "message": "Estensione"
+  },
+  "onboardDiagramApp": {
+    "message": "App Buddy"
+  },
+  "onboardAccessTitle": {
+    "message": "Compila senza lasciare la pagina"
+  },
+  "onboardAccessBody": {
+    "message": "Consenti Buddy sui siti che visiti e nei campi di accesso comparirà un piccolo selettore. Puoi metterlo in pausa sito per sito quando dà fastidio."
+  },
+  "onboardAccessAllow": {
+    "message": "Consenti su tutti i siti"
+  },
+  "onboardAccessGranted": {
+    "message": "Consentito. Il selettore è attivo."
+  },
+  "onboardToolbarTitle": {
+    "message": "Oppure compila dalla barra degli strumenti"
+  },
+  "onboardToolbarBody": {
+    "message": "Fai clic sull’icona di Buddy su qualsiasi pagina. Funziona che tu consenta quanto sopra o no."
+  },
+  "onboardDone": {
+    "message": "Fatto"
+  },
+  "optionsHeading": {
+    "message": "Impostazioni di Buddy"
+  },
+  "optionsAccessTitle": {
+    "message": "Accesso ai siti"
+  },
+  "optionsAccessOn": {
+    "message": "Buddy può mostrare il selettore sui siti che visiti."
+  },
+  "optionsAccessOff": {
+    "message": "Buddy compila solo dalla barra degli strumenti. Consenti l’accesso ai siti per avere il selettore nella pagina."
+  },
+  "optionsAccessAllow": {
+    "message": "Consenti su tutti i siti"
+  },
+  "optionsPausedTitle": {
+    "message": "Siti in pausa"
+  },
+  "optionsPausedEmpty": {
+    "message": "Nessun sito in pausa. Mettine uno in pausa dalla finestra di Buddy quando il selettore dà fastidio."
+  },
+  "optionsResume": {
+    "message": "Riprendi"
+  },
+  "pauseOnSite": {
+    "message": "Metti in pausa su questo sito"
+  },
+  "resumeOnSite": {
+    "message": "Riprendi su questo sito"
+  },
+  "settings": {
+    "message": "Impostazioni"
+  },
+  "fillFramed": {
+    "message": "Questo sito tiene il riquadro di accesso in un frame incorporato. Fai clic sul campo nome utente e scegli da lì."
+  },
+  "fillNoField": {
+    "message": "Nessun campo di accesso trovato in questa pagina."
+  },
+  "fillAmbiguous": {
+    "message": "Qui c’è più di un modulo di accesso. Fai clic sul campo che vuoi e scegli da lì."
+  },
+  "openPicker": {
+    "message": "Compila con Buddy"
+  },
+  "commandOpenPicker": {
+    "message": "Aprire l’elenco di Buddy sul campo attivo"
+  },
+  "onboardDemoLabel": {
+    "message": "E-mail"
+  },
+  "onboardDemoValue": {
+    "message": "tu@esempio.it"
+  },
+  "onboardDemoCaption": {
+    "message": "Fai clic sul segno di Buddy dentro un campo di accesso, o premi Ctrl+Maiusc+L, per vedere i tuoi accessi salvati."
+  }
+}

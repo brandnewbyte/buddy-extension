@@ -1,0 +1,49 @@
+<!-- Adversarial card widget: styling classes describe the whole credit-card
+     component, identifiers mix camelCase with separators, and one visible
+     "Expiration date" label is shared visually by separate native selects.
+     The vocabulary is intentionally vendor-neutral; this exercises generic
+     field semantics rather than a site allowlist. -->
+<form id="payment-card">
+  <label for="payment-number">Card number</label>
+  <input
+    id="payment-number"
+    type="tel"
+    name="addCreditCardNumber"
+    autocomplete="off"
+    class="checkout-credit-card-field account-number"
+  >
+
+  <label for="payment-holder">Name on card</label>
+  <input
+    id="payment-holder"
+    type="text"
+    name="payment-accountHolderName"
+    autocomplete="off"
+    class="checkout-credit-card-field account-holder-input"
+  >
+
+  <label for="payment-month">Expiration date</label>
+  <select
+    id="payment-month"
+    name="payment-expirationDate_month"
+    autocomplete="off"
+    class="checkout-credit-card-field native-dropdown"
+  >
+    <option value="1">01</option>
+    <option value="4">04</option>
+    <option value="12">12</option>
+  </select>
+
+  <select
+    id="payment-year"
+    name="payment-expirationDate_year"
+    autocomplete="off"
+    class="checkout-credit-card-field native-dropdown"
+  >
+    <option value="2026">2026</option>
+    <option value="2030">2030</option>
+    <option value="2040">2040</option>
+  </select>
+
+  <button type="submit">Add card</button>
+</form>

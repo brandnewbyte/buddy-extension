@@ -1,0 +1,14 @@
+<!-- Footer newsletter form also wants an email; login form must win -->
+<main>
+  <form id="login-form" action="/auth/session">
+    <input type="email" name="email" data-expect="username">
+    <input type="password" name="password" data-expect="password">
+    <button>Log in</button>
+  </form>
+</main>
+<footer>
+  <form action="/newsletter">
+    <input type="email" name="email" placeholder="Get our newsletter" data-decoy>
+    <button>Subscribe</button>
+  </form>
+</footer>

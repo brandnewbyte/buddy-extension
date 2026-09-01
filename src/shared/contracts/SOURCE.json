@@ -1,0 +1,9 @@
+{
+  "protocolVersion": 1,
+  "ownerRepo": "buddy (private)",
+  "ownerCommit": "1597a02e5a515a19d261bfbea7ffa6b7b5226804",
+  "commandOwner": "desktop/src-tauri/src/socket/protocol.rs",
+  "responseOwner": "desktop/src-tauri/src/socket/handlers/",
+  "note": "protocol.rs owns only the command direction (extension to desktop) as a typed enum. The response shapes these schemas validate have no Rust type at all: each handler assembles its payload with serde_json::json!, and the released-entry payload every fill path returns is built in handlers/shared.rs. Each validator in responses.ts names the command it answers. Nothing mechanical checks the two sides against each other yet, in either repository, because there is no struct to serialize a vector from; the schemas are kept in step by review against the files above at ownerCommit. Closing that gap means golden-file tests over the json! output in the desktop, committed there and vendored here to replay through these validators, so this repository's CI never needs access to the desktop's.",
+  "wireCompatibility": "hasExactKeys makes an unrecognised response key a rejection, so a desktop-side addition breaks installed extensions until they are updated. That is version skew, not a repository-split problem: a user runs a store extension against whatever desktop last auto-updated. The channel for handling it is PROTOCOL_VERSION in src/shared/ipc.ts, which rides on every request and which the desktop can refuse with UNSUPPORTED_VERSION."
+}

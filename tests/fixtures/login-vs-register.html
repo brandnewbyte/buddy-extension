@@ -1,0 +1,15 @@
+<!-- Side-by-side register + login, register first in DOM so scoring (not
+     document order) must decide. Both contain an email field. -->
+<div class="split">
+  <form id="register" action="/signup">
+    <input type="email" name="email" data-decoy>
+    <input type="password" name="password" data-decoy>
+    <input type="password" name="password_confirm" data-decoy>
+    <button>Create account</button>
+  </form>
+  <form id="login" action="/login">
+    <input type="email" name="email" data-expect="username">
+    <input type="password" name="password" data-expect="password">
+    <button>Sign in</button>
+  </form>
+</div>

@@ -1,0 +1,211 @@
+{
+  "extDescription": {
+    "message": "Автозаполнение логинов из настольного приложения Buddy."
+  },
+  "popupSubtitle": {
+    "message": "Менеджер паролей"
+  },
+  "versionMismatch": {
+    "message": "Это расширение и приложение Buddy рассинхронизированы. Обновите оба до последней версии, чтобы автозаполнение продолжало работать."
+  },
+  "noLogins": {
+    "message": "Для этого сайта нет сохранённых логинов"
+  },
+  "cards": {
+    "message": "Карты"
+  },
+  "addresses": {
+    "message": "Адреса"
+  },
+  "fillActive": {
+    "message": "Выполняется автозаполнение"
+  },
+  "fill": {
+    "message": "Заполнить"
+  },
+  "cancel": {
+    "message": "Отмена"
+  },
+  "saveNewLogin": {
+    "message": "Сохранить новый логин?"
+  },
+  "updatePassword": {
+    "message": "Обновить пароль?"
+  },
+  "save": {
+    "message": "Сохранить"
+  },
+  "saveTo": {
+    "message": "Сохранить в"
+  },
+  "dismiss": {
+    "message": "Скрыть"
+  },
+  "notRunning": {
+    "message": "Buddy не запущен"
+  },
+  "notInstalled": {
+    "message": "Приложение Buddy не найдено"
+  },
+  "notInstalledHint": {
+    "message": "У расширения нет собственного хранилища. Установите настольное приложение Buddy, чтобы начать."
+  },
+  "getBuddy": {
+    "message": "Скачать Buddy на pwbuddy.com"
+  },
+  "open": {
+    "message": "Открыть"
+  },
+  "unlocked": {
+    "message": "Разблокировано"
+  },
+  "locked": {
+    "message": "Заблокированы"
+  },
+  "saveLoginFor": {
+    "message": "Сохранить логин для $TITLE$? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "updatePasswordFor": {
+    "message": "Обновить пароль для $TITLE$? ($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "notNow": {
+    "message": "Не сейчас"
+  },
+  "saveFailed": {
+    "message": "Не удалось сохранить. Попробуйте снова."
+  },
+  "vaultLocked": {
+    "message": "Хранилище заблокировано"
+  },
+  "openToUnlock": {
+    "message": "Откройте Buddy, чтобы разблокировать"
+  },
+  "pairNeeded": {
+    "message": "Нет подключения к Buddy"
+  },
+  "pairWaiting": {
+    "message": "Подтвердите подключение в приложении Buddy…"
+  },
+  "connect": {
+    "message": "Подключить"
+  },
+  "onboardHeading": {
+    "message": "Buddy готов"
+  },
+  "onboardSub": {
+    "message": "Коротко о том, как это работает."
+  },
+  "onboardVaultTitle": {
+    "message": "Хранилище остаётся в настольном приложении"
+  },
+  "onboardVaultBody": {
+    "message": "У расширения нет собственного хранилища. Оно обращается к приложению Buddy, которое вы разблокируете, и только за теми полями, которые страница действительно может заполнить."
+  },
+  "onboardDiagramPage": {
+    "message": "Страница"
+  },
+  "onboardDiagramExtension": {
+    "message": "Расширение"
+  },
+  "onboardDiagramApp": {
+    "message": "Приложение Buddy"
+  },
+  "onboardAccessTitle": {
+    "message": "Заполняйте, не покидая страницу"
+  },
+  "onboardAccessBody": {
+    "message": "Разрешите Buddy на сайтах, которые вы посещаете, и в полях входа появится небольшой список. Его можно приостановить для отдельного сайта, если он мешает."
+  },
+  "onboardAccessAllow": {
+    "message": "Разрешить на всех сайтах"
+  },
+  "onboardAccessGranted": {
+    "message": "Разрешено. Список включён."
+  },
+  "onboardToolbarTitle": {
+    "message": "Или заполняйте с панели инструментов"
+  },
+  "onboardToolbarBody": {
+    "message": "Нажмите значок Buddy на любой странице. Это работает независимо от разрешения выше."
+  },
+  "onboardDone": {
+    "message": "Готово"
+  },
+  "optionsHeading": {
+    "message": "Настройки Buddy"
+  },
+  "optionsAccessTitle": {
+    "message": "Доступ к сайтам"
+  },
+  "optionsAccessOn": {
+    "message": "Buddy может показывать список на сайтах, которые вы посещаете."
+  },
+  "optionsAccessOff": {
+    "message": "Buddy заполняет только с панели инструментов. Разрешите доступ к сайтам, чтобы список появлялся на странице."
+  },
+  "optionsAccessAllow": {
+    "message": "Разрешить на всех сайтах"
+  },
+  "optionsPausedTitle": {
+    "message": "Приостановленные сайты"
+  },
+  "optionsPausedEmpty": {
+    "message": "Нет приостановленных сайтов. Приостановите сайт в окне Buddy, если список мешает."
+  },
+  "optionsResume": {
+    "message": "Возобновить"
+  },
+  "pauseOnSite": {
+    "message": "Приостановить на этом сайте"
+  },
+  "resumeOnSite": {
+    "message": "Возобновить на этом сайте"
+  },
+  "settings": {
+    "message": "Настройки"
+  },
+  "fillFramed": {
+    "message": "На этом сайте форма входа находится во встроенном фрейме. Нажмите на поле имени пользователя и выберите там."
+  },
+  "fillNoField": {
+    "message": "На этой странице не найдено поле входа."
+  },
+  "fillAmbiguous": {
+    "message": "Здесь несколько форм входа. Нажмите на нужное поле и выберите там."
+  },
+  "openPicker": {
+    "message": "Заполнить с Buddy"
+  },
+  "commandOpenPicker": {
+    "message": "Открыть список Buddy для активного поля"
+  },
+  "onboardDemoLabel": {
+    "message": "Эл. почта"
+  },
+  "onboardDemoValue": {
+    "message": "vy@primer.ru"
+  },
+  "onboardDemoCaption": {
+    "message": "Нажмите значок Buddy внутри поля входа или клавиши Ctrl+Shift+L, чтобы увидеть сохранённые логины."
+  }
+}

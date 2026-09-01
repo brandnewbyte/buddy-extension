@@ -1,0 +1,13 @@
+<!-- Two equally real login forms (customer + admin). With no anchor there is
+     no defensible pick, so an unanchored fill must do nothing at all —
+     the targeted anchored behavior is asserted in fill.test.ts directly. -->
+<form id="customer" action="/login">
+  <input type="email" name="email">
+  <input type="password" name="password">
+  <button>Sign in</button>
+</form>
+<form id="admin" action="/admin/login">
+  <input type="text" name="username">
+  <input type="password" name="password">
+  <button>Sign in</button>
+</form>

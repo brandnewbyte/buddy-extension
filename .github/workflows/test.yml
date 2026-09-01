@@ -1,0 +1,65 @@
+# The gate that runs on every push.
+#
+# Everything here is self-contained: the schemas in src/shared/contracts are
+# plain TypeScript, and contracts/native-host.json is a vendored pin. Nothing
+# in this workflow needs access to the desktop repository, and nothing should
+# be added that does.
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  extension:
+    name: Extension
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Test
+        run: npm test
+
+      - name: Build Chrome and Firefox
+        run: npm run build:all
+
+      # The store-release gate. A published package cannot be recalled, so the
+      # permission surface, the absence of sourcemaps, and the three identities
+      # in contracts/native-host.json are all asserted here rather than trusted.
+      - name: Release gate
+        run: npm run verify
+
+      # What AMO would reject must fail here, not there.
+      - name: Lint Firefox package
+        run: npx web-ext lint --source-dir dist/firefox --warnings-as-errors=false
+
+      # The README tells people to verify the store packages by rebuilding them
+      # and comparing hashes. That claim is only worth making if it is checked:
+      # two packagings of one commit must agree byte for byte.
+      - name: Packages are reproducible
+        run: |
+          npm run package:all
+          shasum -a 256 releases/*.zip | sed 's|releases/||' > /tmp/first
+          rm -rf dist releases
+          npm run package:all
+          shasum -a 256 releases/*.zip | sed 's|releases/||' > /tmp/second
+          diff /tmp/first /tmp/second
+          echo "Reproducible:"
+          cat /tmp/second

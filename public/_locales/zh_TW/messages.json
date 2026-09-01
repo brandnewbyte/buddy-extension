@@ -1,0 +1,211 @@
+{
+  "extDescription": {
+    "message": "從 Buddy 桌面應用程式自動填入登入資訊。"
+  },
+  "popupSubtitle": {
+    "message": "密碼管理器"
+  },
+  "versionMismatch": {
+    "message": "此擴充功能與 Buddy 應用程式版本不同步。請將兩者更新至最新版本，以繼續使用自動填入。"
+  },
+  "noLogins": {
+    "message": "此網站沒有已儲存的登入資訊"
+  },
+  "cards": {
+    "message": "卡片"
+  },
+  "addresses": {
+    "message": "地址"
+  },
+  "fillActive": {
+    "message": "自動填入進行中"
+  },
+  "fill": {
+    "message": "填入"
+  },
+  "cancel": {
+    "message": "取消"
+  },
+  "saveNewLogin": {
+    "message": "儲存新登入資訊？"
+  },
+  "updatePassword": {
+    "message": "更新密碼？"
+  },
+  "save": {
+    "message": "儲存"
+  },
+  "saveTo": {
+    "message": "儲存至"
+  },
+  "dismiss": {
+    "message": "忽略"
+  },
+  "notRunning": {
+    "message": "Buddy 未執行"
+  },
+  "notInstalled": {
+    "message": "找不到 Buddy 桌面應用程式"
+  },
+  "notInstalledHint": {
+    "message": "擴充功能本身沒有保管庫。請安裝 Buddy 桌面應用程式以開始使用。"
+  },
+  "getBuddy": {
+    "message": "前往 pwbuddy.com 取得 Buddy"
+  },
+  "open": {
+    "message": "開啟"
+  },
+  "unlocked": {
+    "message": "已解鎖"
+  },
+  "locked": {
+    "message": "已鎖定"
+  },
+  "saveLoginFor": {
+    "message": "儲存 $TITLE$ 的登入資訊？($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "updatePasswordFor": {
+    "message": "更新 $TITLE$ 的密碼？($USER$)",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "notNow": {
+    "message": "暫不"
+  },
+  "saveFailed": {
+    "message": "儲存失敗，請重試。"
+  },
+  "vaultLocked": {
+    "message": "保管庫已鎖定"
+  },
+  "openToUnlock": {
+    "message": "開啟 Buddy 以解鎖"
+  },
+  "pairNeeded": {
+    "message": "未連線到 Buddy"
+  },
+  "pairWaiting": {
+    "message": "請在 Buddy 應用程式中核准連線…"
+  },
+  "connect": {
+    "message": "連線"
+  },
+  "onboardHeading": {
+    "message": "Buddy 已就緒"
+  },
+  "onboardSub": {
+    "message": "快速了解它的運作方式。"
+  },
+  "onboardVaultTitle": {
+    "message": "保險庫始終留在桌面應用程式中"
+  },
+  "onboardVaultBody": {
+    "message": "本擴充功能沒有自己的保險庫。它會向你解鎖的 Buddy 應用程式請求，而且只請求目前頁面確實能填寫的欄位。"
+  },
+  "onboardDiagramPage": {
+    "message": "網頁"
+  },
+  "onboardDiagramExtension": {
+    "message": "擴充功能"
+  },
+  "onboardDiagramApp": {
+    "message": "Buddy 應用程式"
+  },
+  "onboardAccessTitle": {
+    "message": "不必離開頁面即可填寫"
+  },
+  "onboardAccessBody": {
+    "message": "在你造訪的網站上允許 Buddy，登入欄位就會出現一個小的選擇清單。覺得礙事時可以依網站暫停。"
+  },
+  "onboardAccessAllow": {
+    "message": "在所有網站上允許"
+  },
+  "onboardAccessGranted": {
+    "message": "已允許。選擇清單已開啟。"
+  },
+  "onboardToolbarTitle": {
+    "message": "也可以從工具列填寫"
+  },
+  "onboardToolbarBody": {
+    "message": "在任何頁面點擊工具列中的 Buddy 圖示。無論是否允許上面的權限，這都能使用。"
+  },
+  "onboardDone": {
+    "message": "完成"
+  },
+  "optionsHeading": {
+    "message": "Buddy 設定"
+  },
+  "optionsAccessTitle": {
+    "message": "網站存取權"
+  },
+  "optionsAccessOn": {
+    "message": "Buddy 可以在你造訪的網站上顯示選擇清單。"
+  },
+  "optionsAccessOff": {
+    "message": "Buddy 只能從工具列填寫。允許網站存取即可在頁面內使用選擇清單。"
+  },
+  "optionsAccessAllow": {
+    "message": "在所有網站上允許"
+  },
+  "optionsPausedTitle": {
+    "message": "已暫停的網站"
+  },
+  "optionsPausedEmpty": {
+    "message": "沒有暫停的網站。選擇清單礙事時，可在 Buddy 彈出視窗中暫停。"
+  },
+  "optionsResume": {
+    "message": "恢復"
+  },
+  "pauseOnSite": {
+    "message": "在此網站暫停"
+  },
+  "resumeOnSite": {
+    "message": "在此網站恢復"
+  },
+  "settings": {
+    "message": "設定"
+  },
+  "fillFramed": {
+    "message": "此網站把登入框放在內嵌框架中。請點擊使用者名稱輸入框，然後從那裡選擇。"
+  },
+  "fillNoField": {
+    "message": "在此頁面上找不到登入輸入框。"
+  },
+  "fillAmbiguous": {
+    "message": "此頁面有多個登入表單。請點擊你想填寫的輸入框，然後從那裡選擇。"
+  },
+  "openPicker": {
+    "message": "用 Buddy 填寫"
+  },
+  "commandOpenPicker": {
+    "message": "在目前輸入框上開啟 Buddy 清單"
+  },
+  "onboardDemoLabel": {
+    "message": "電子郵件"
+  },
+  "onboardDemoValue": {
+    "message": "you@example.com"
+  },
+  "onboardDemoCaption": {
+    "message": "點擊登入輸入框內的 Buddy 標記，或按 Ctrl+Shift+L，即可查看已儲存的登入資訊。"
+  }
+}

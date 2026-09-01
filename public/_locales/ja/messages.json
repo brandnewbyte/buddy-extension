@@ -1,0 +1,211 @@
+{
+  "extDescription": {
+    "message": "Buddy デスクトップアプリからログイン情報を自動入力します。"
+  },
+  "popupSubtitle": {
+    "message": "パスワードマネージャー"
+  },
+  "versionMismatch": {
+    "message": "この拡張機能と Buddy アプリのバージョンが一致していません。自動入力を使い続けるには、両方を最新バージョンに更新してください。"
+  },
+  "noLogins": {
+    "message": "このサイトの保存済みログインはありません"
+  },
+  "cards": {
+    "message": "カード"
+  },
+  "addresses": {
+    "message": "住所"
+  },
+  "fillActive": {
+    "message": "自動入力を実行中"
+  },
+  "fill": {
+    "message": "入力"
+  },
+  "cancel": {
+    "message": "キャンセル"
+  },
+  "saveNewLogin": {
+    "message": "新しいログインを保存しますか？"
+  },
+  "updatePassword": {
+    "message": "パスワードを更新しますか？"
+  },
+  "save": {
+    "message": "保存"
+  },
+  "saveTo": {
+    "message": "保存先"
+  },
+  "dismiss": {
+    "message": "閉じる"
+  },
+  "notRunning": {
+    "message": "Buddy が起動していません"
+  },
+  "notInstalled": {
+    "message": "Buddy デスクトップアプリが見つかりません"
+  },
+  "notInstalledHint": {
+    "message": "拡張機能自体はボールトを持っていません。始めるには Buddy デスクトップアプリをインストールしてください。"
+  },
+  "getBuddy": {
+    "message": "pwbuddy.com で Buddy を入手"
+  },
+  "open": {
+    "message": "開く"
+  },
+  "unlocked": {
+    "message": "ロック解除済み"
+  },
+  "locked": {
+    "message": "ロック中"
+  },
+  "saveLoginFor": {
+    "message": "$TITLE$ のログインを保存しますか？（$USER$）",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "updatePasswordFor": {
+    "message": "$TITLE$ のパスワードを更新しますか？（$USER$）",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "example.com"
+      },
+      "user": {
+        "content": "$2",
+        "example": "jane@example.com"
+      }
+    }
+  },
+  "notNow": {
+    "message": "後で"
+  },
+  "saveFailed": {
+    "message": "保存できませんでした。もう一度お試しください。"
+  },
+  "vaultLocked": {
+    "message": "ボールトはロックされています"
+  },
+  "openToUnlock": {
+    "message": "Buddy を開いてロック解除"
+  },
+  "pairNeeded": {
+    "message": "Buddy に接続されていません"
+  },
+  "pairWaiting": {
+    "message": "Buddy アプリで接続を承認してください…"
+  },
+  "connect": {
+    "message": "接続"
+  },
+  "onboardHeading": {
+    "message": "Buddy の準備ができました"
+  },
+  "onboardSub": {
+    "message": "仕組みを簡単にご紹介します。"
+  },
+  "onboardVaultTitle": {
+    "message": "ボールトはデスクトップアプリの中にあります"
+  },
+  "onboardVaultBody": {
+    "message": "この拡張機能は自分のボールトを持ちません。あなたがロック解除した Buddy アプリに問い合わせ、そのページが実際に入力できる項目だけを受け取ります。"
+  },
+  "onboardDiagramPage": {
+    "message": "ページ"
+  },
+  "onboardDiagramExtension": {
+    "message": "拡張機能"
+  },
+  "onboardDiagramApp": {
+    "message": "Buddy アプリ"
+  },
+  "onboardAccessTitle": {
+    "message": "ページを離れずに入力"
+  },
+  "onboardAccessBody": {
+    "message": "訪問先のサイトで Buddy を許可すると、ログイン欄に小さな選択リストが表示されます。邪魔なときはサイトごとに一時停止できます。"
+  },
+  "onboardAccessAllow": {
+    "message": "すべてのサイトで許可"
+  },
+  "onboardAccessGranted": {
+    "message": "許可しました。選択リストは有効です。"
+  },
+  "onboardToolbarTitle": {
+    "message": "ツールバーから入力することもできます"
+  },
+  "onboardToolbarBody": {
+    "message": "どのページでもツールバーの Buddy アイコンをクリックしてください。上の許可の有無にかかわらず使えます。"
+  },
+  "onboardDone": {
+    "message": "完了"
+  },
+  "optionsHeading": {
+    "message": "Buddy の設定"
+  },
+  "optionsAccessTitle": {
+    "message": "サイトへのアクセス"
+  },
+  "optionsAccessOn": {
+    "message": "Buddy は訪問先のサイトで選択リストを表示できます。"
+  },
+  "optionsAccessOff": {
+    "message": "Buddy はツールバーからのみ入力します。ページ内の選択リストを使うにはサイトへのアクセスを許可してください。"
+  },
+  "optionsAccessAllow": {
+    "message": "すべてのサイトで許可"
+  },
+  "optionsPausedTitle": {
+    "message": "一時停止中のサイト"
+  },
+  "optionsPausedEmpty": {
+    "message": "一時停止中のサイトはありません。選択リストが邪魔なときは Buddy のポップアップから停止できます。"
+  },
+  "optionsResume": {
+    "message": "再開"
+  },
+  "pauseOnSite": {
+    "message": "このサイトで一時停止"
+  },
+  "resumeOnSite": {
+    "message": "このサイトで再開"
+  },
+  "settings": {
+    "message": "設定"
+  },
+  "fillFramed": {
+    "message": "このサイトはログイン欄を埋め込みフレーム内に置いています。ユーザー名の欄をクリックし、そこから選んでください。"
+  },
+  "fillNoField": {
+    "message": "このページにログイン欄が見つかりませんでした。"
+  },
+  "fillAmbiguous": {
+    "message": "このページには複数のログインフォームがあります。入力したい欄をクリックし、そこから選んでください。"
+  },
+  "openPicker": {
+    "message": "Buddy で入力"
+  },
+  "commandOpenPicker": {
+    "message": "フォーカス中の入力欄で Buddy の一覧を開く"
+  },
+  "onboardDemoLabel": {
+    "message": "メールアドレス"
+  },
+  "onboardDemoValue": {
+    "message": "you@example.com"
+  },
+  "onboardDemoCaption": {
+    "message": "ログイン欄の中の Buddy マークをクリックするか、Ctrl+Shift+L を押すと、保存済みのログインが表示されます。"
+  }
+}
