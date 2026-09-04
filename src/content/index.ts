@@ -52,7 +52,7 @@ async function resumePendingFill(): Promise<boolean> {
   const offers = pageOffers(classifyPage())
   if (!offers.length) return false
 
-  const entry = dataOr(await send<IpcResult<Entry | null>>({ type: 'GET_PENDING_FILL', offers }), null)
+  const entry = dataOr(await send<IpcResult<Entry | null>>({ type: 'GET_PENDING_FILL', offers, reason: 'load' }), null)
   if (!entry) return false
 
   await runFill(entry, null)
@@ -102,7 +102,8 @@ function watchForFields(): void {
 
       // Unanchored on purpose: the field the user picked from may be gone
       // (an AJAX step replaced the form), so the unique-form rule decides.
-      const entry = dataOr(await send<IpcResult<Entry | null>>({ type: 'GET_PENDING_FILL', offers }), null)
+      // Same document, so this spends nothing from the session's page budget.
+      const entry = dataOr(await send<IpcResult<Entry | null>>({ type: 'GET_PENDING_FILL', offers, reason: 'reveal' }), null)
       if (entry) await fill(entry, null)
     }, 250)
   })

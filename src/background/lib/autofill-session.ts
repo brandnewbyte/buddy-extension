@@ -1,6 +1,19 @@
+import { remainingAfter } from '../../shared/contracts/fields'
 import type { FieldType } from '../../shared/types'
 
 const TTL_MS = 5 * 60 * 1000
+
+// Top-frame documents that may resume this session before it's dropped. The
+// TTL alone is a weak bound: matching is host-exact but path never gates, so a
+// session outliving its login flow stays offerable on every other page of the
+// same site for the rest of the window. A multi-page login spends one document
+// per step it's actually asked to fill — two for username/password/TOTP, and
+// the third is slack for a client-side redirect that re-presents a form.
+//
+// Only pages presenting fillable fields ask at all, so an interstitial or a
+// post-login dashboard costs nothing: the budget meters exactly the documents
+// where a resume was possible.
+const MAX_DOCUMENTS = 3
 
 // Security boundary: no entry values are ever persisted here. The session
 // holds a single-use token redeemable through the native channel plus the
@@ -10,6 +23,10 @@ interface AutofillSession {
   token: string
   remaining: FieldType[]
   createdAt: number
+  // Top-frame documents that have asked to resume. Counts pages rather than
+  // navigations because the content script's per-page ask is the only
+  // navigation signal available without the `tabs` permission.
+  documents?: number
 }
 
 const key = (tabId: number) => `autofill:${tabId}`
@@ -33,6 +50,23 @@ export async function start(tabId: number, token: string, fields: FieldType[]): 
   await save(tabId, { token, remaining: [...fields], createdAt: Date.now() })
 }
 
+// Charges one top-frame document against the session's budget, returning the
+// survivor — or null once it's spent and the session has been dropped.
+export async function countDocument(tabId: number): Promise<AutofillSession | null> {
+  const sess = await get(tabId)
+  if (!sess) return null
+
+  const documents = (sess.documents ?? 0) + 1
+  if (documents > MAX_DOCUMENTS) {
+    await clear(tabId)
+    return null
+  }
+
+  const charged = { ...sess, documents }
+  await save(tabId, charged)
+  return charged
+}
+
 // Each redemption consumes the token; store its successor
 export async function rotate(tabId: number, token: string): Promise<void> {
   const sess = await get(tabId)
@@ -44,7 +78,7 @@ export async function markFilled(tabId: number, types: FieldType[]): Promise<voi
   const sess = await get(tabId)
   if (!sess) return
 
-  sess.remaining = sess.remaining.filter(t => !types.includes(t))
+  sess.remaining = remainingAfter(sess.remaining, types)
 
   if (!sess.remaining.length) {
     await clear(tabId)

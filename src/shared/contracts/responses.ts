@@ -7,14 +7,14 @@
 
 import { LIMITS } from './limits'
 import { isFieldType, type FieldType } from './fields'
-import { arr, bool, hasExactKeys, isRecord, mapAll, nonEmptyStr, optionalStr, str } from './validate'
+import { arr, bool, hasExactKeys, isRecord, mapAll, nonEmptyStr, nonNegativeInt, optionalStr, str } from './validate'
 import type { Entry, EntryField, EntryMeta, Vault } from '../types'
 
 const ENTRY_KEYS = ['id', 'vaultId', 'sectionId', 'title', 'hasIcon', 'fields'] as const
 const FIELD_KEYS = ['type', 'value'] as const
 const FIELD_OPTIONAL_KEYS = ['label'] as const
 const META_KEYS = ['id', 'vaultId', 'sectionId', 'title'] as const
-const META_OPTIONAL_KEYS = ['sectionName', 'capabilities', 'username', 'url', 'subtitle'] as const
+const META_OPTIONAL_KEYS = ['sectionName', 'capabilities', 'username', 'url', 'subtitle', 'rank'] as const
 const VAULT_KEYS = ['id', 'name', 'color', 'locked'] as const
 
 function validateField(raw: unknown, requested: readonly FieldType[]): EntryField | null {
@@ -63,14 +63,34 @@ export function validateEntry(raw: unknown, requested: readonly FieldType[]): En
 export interface FillGrant {
   entry: Entry
   token: string
+  /**
+   * Every field type the section holds a value for — the ceiling on what a
+   * later page of this fill could ask for, not what was released here. Field
+   * *names* only; it stays in the background and seeds the session's work
+   * queue. Absent from a desktop predating multi-page resume, where the
+   * granted slice is the only queue there is.
+   */
+  available?: FieldType[]
 }
 
 /** GET_ENTRY_BY_ID and GET_ENTRY_BY_TOKEN: the slice plus its successor token. */
 export function validateFillGrant(raw: unknown, requested: readonly FieldType[]): FillGrant | null {
-  if (!isRecord(raw) || !hasExactKeys(raw, ['entry', 'token'])) return null
+  if (!isRecord(raw) || !hasExactKeys(raw, ['entry', 'token'], ['available'])) return null
   const entry = validateEntry(raw.entry, requested)
   const token = nonEmptyStr(raw.token, LIMITS.token)
-  return entry && token ? { entry, token } : null
+  if (!entry || !token) return null
+
+  if (raw.available === undefined) return { entry, token }
+
+  const list = arr(raw.available, LIMITS.entryFields)
+  if (list === null) return null
+  // An unrecognised name is a protocol error here rather than something to
+  // skip: the queue decides what later pages may request, and a queue we only
+  // half understand is one we cannot bound.
+  const available = mapAll(list, value => (isFieldType(value) ? value : null))
+  if (available === null) return null
+
+  return { entry, token, available: [...new Set(available)] }
 }
 
 /** GET_ENTRY_BY_CAPABILITY: single-shot, so no token to chain. */
@@ -94,6 +114,13 @@ function validateMeta(raw: unknown): EntryMeta | null {
   const subtitle = optionalStr(raw.subtitle, LIMITS.label)
   if (!sectionName || !username || !url || !subtitle) return null
 
+  let rank: number | undefined
+  if (raw.rank !== undefined) {
+    const parsed = nonNegativeInt(raw.rank, LIMITS.rank)
+    if (parsed === null) return null
+    rank = parsed
+  }
+
   let capabilities: string[] | undefined
   if (raw.capabilities !== undefined) {
     const list = arr(raw.capabilities, LIMITS.capabilities)
@@ -106,6 +133,7 @@ function validateMeta(raw: unknown): EntryMeta | null {
   const meta: EntryMeta = { id, vaultId, sectionId, title }
   if (sectionName.value !== undefined) meta.sectionName = sectionName.value
   if (capabilities !== undefined) meta.capabilities = capabilities
+  if (rank !== undefined) meta.rank = rank
   if (username.value !== undefined) meta.username = username.value
   if (url.value !== undefined) meta.url = url.value
   if (subtitle.value !== undefined) meta.subtitle = subtitle.value

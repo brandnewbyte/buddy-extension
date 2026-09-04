@@ -42,6 +42,13 @@ export function optionalStr(value: unknown, max: number): { ok: true; value?: st
   return s === null ? null : { ok: true, value: s }
 }
 
+/** A non-negative integer of at most `max`, or null. */
+export function nonNegativeInt(value: unknown, max: number): number | null {
+  return typeof value === 'number' && Number.isInteger(value) && value >= 0 && value <= max
+    ? value
+    : null
+}
+
 export function bool(value: unknown): boolean | null {
   return typeof value === 'boolean' ? value : null
 }

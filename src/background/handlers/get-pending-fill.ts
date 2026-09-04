@@ -2,7 +2,7 @@ import { sendToNative } from '../lib/native'
 import { validateCapabilityGrant, validateFillGrant } from '../../shared/contracts/responses'
 import { originPath } from '../lib/tabs'
 import { pendingTokens } from '../lib/pending-tokens'
-import { isFieldType, type FieldType } from '../../shared/contracts/fields'
+import { isFieldType, loginChain, type FieldType } from '../../shared/contracts/fields'
 import { LIMITS } from '../../shared/contracts/limits'
 import * as autofillSession from '../lib/autofill-session'
 import * as capabilityTarget from '../lib/capability-target'
@@ -32,9 +32,16 @@ export async function handle(
 
   // Multi-page login sessions resume in the top frame only; a subframe asking
   // can still be served a capability refill below, but never a login.
+  //
+  // A fresh document charges the session's budget before anything is asked of
+  // the vault, so a session that has outlived its login flow runs out of pages
+  // rather than staying offerable for the rest of its TTL. A desktop token is
+  // not metered: its first ask *is* the page load that redeems it.
   const topFrame = sender?.frameId === 0
   const desktopToken = topFrame ? await pendingTokens.get(tabId) : undefined
-  const session = topFrame && !desktopToken ? await autofillSession.get(tabId) : null
+  const session = topFrame && !desktopToken
+    ? (message.reason === 'reveal' ? await autofillSession.get(tabId) : await autofillSession.countDocument(tabId))
+    : null
   const token = desktopToken ?? session?.token
 
   if (token) {
@@ -56,12 +63,15 @@ export async function handle(
       return response
     }
 
-    const { entry, token: next } = response.data
+    const { entry, token: next, available } = response.data
     if (session) {
       await autofillSession.rotate(tabId, next)
     } else {
+      // A desktop-initiated grab becomes a session here, and takes the same
+      // work queue a picker fill would: what the section holds, so its own
+      // later pages resume rather than stopping at this one.
       await pendingTokens.delete(tabId)
-      await autofillSession.start(tabId, next, entry.fields.map(f => f.type))
+      await autofillSession.start(tabId, next, loginChain(available ?? entry.fields.map(f => f.type)))
     }
     return { ok: true, data: entry }
   }

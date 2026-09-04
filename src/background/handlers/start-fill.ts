@@ -4,7 +4,7 @@ import { activeTab, originPath, senderFrameUrl } from '../lib/tabs'
 import { probe } from '../lib/frame-offers'
 import { ensureContentScript } from '../lib/host-access'
 import { deliver, type FrameTarget } from '../lib/fill-delivery'
-import { isFieldType } from '../../shared/contracts/fields'
+import { isFieldType, loginChain } from '../../shared/contracts/fields'
 import * as autofillSession from '../lib/autofill-session'
 import * as pendingSave from '../lib/pending-save'
 import type { IpcResult } from '../../shared/ipc'
@@ -70,8 +70,13 @@ export async function handle(sender: chrome.runtime.MessageSender | undefined, m
 
   if (!response.ok) return response
 
-  const { entry, token } = response.data
-  await autofillSession.start(tab.id, token, entry.fields.map(f => f.type))
+  // Seeded from what the section *holds*, not from the slice just released:
+  // a login page that offers only username/password would otherwise declare
+  // the session finished the moment it was filled, and the TOTP step a page
+  // later would find nothing pending. `available` is absent only on a desktop
+  // predating it, where the granted slice is the best queue there is.
+  const { entry, token, available } = response.data
+  await autofillSession.start(tab.id, token, loginChain(available ?? entry.fields.map(f => f.type)))
   await deliver(tab.id, targets, entry)
 
   return { ok: true, data: undefined }

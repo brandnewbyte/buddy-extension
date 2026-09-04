@@ -8,7 +8,8 @@ import {
 } from '../src/shared/contracts/responses'
 import { LIMITS } from '../src/shared/contracts/limits'
 import { hasExactKeys } from '../src/shared/contracts/validate'
-import type { FieldType } from '../src/shared/types'
+import { sorted } from '../src/background/lib/entry-order'
+import type { EntryMeta, FieldType } from '../src/shared/types'
 
 const LOGIN: FieldType[] = ['username', 'password']
 
@@ -87,6 +88,31 @@ describe('validateFillGrant', () => {
     expect(validateFillGrant({ ...raw, token: '' }, LOGIN)).toBeNull()
     expect(validateFillGrant({ entry: raw.entry }, LOGIN)).toBeNull()
   })
+
+  it('carries the section\'s remaining fillable set, deduplicated', () => {
+    const raw = {
+      entry: entry([{ type: 'username', value: 'u' }]),
+      token: 't1',
+      available: ['username', 'password', 'totp', 'totp'],
+    }
+    // Wider than the released slice on purpose: this is the multi-page work
+    // queue, not a second copy of what just crossed.
+    expect(validateFillGrant(raw, LOGIN)?.available).toEqual(['username', 'password', 'totp'])
+  })
+
+  it('treats an unrecognised name in the queue as a protocol error', () => {
+    const raw = {
+      entry: entry([{ type: 'username', value: 'u' }]),
+      token: 't1',
+      available: ['username', 'totp_seed'],
+    }
+    expect(validateFillGrant(raw, LOGIN)).toBeNull()
+  })
+
+  it('accepts a desktop that sends no queue at all', () => {
+    const raw = { entry: entry([{ type: 'username', value: 'u' }]), token: 't1' }
+    expect(validateFillGrant(raw, LOGIN)?.available).toBeUndefined()
+  })
 })
 
 describe('validateEntryList', () => {
@@ -105,6 +131,34 @@ describe('validateEntryList', () => {
   it('rejects a listing longer than the cap', () => {
     const entries = Array.from({ length: LIMITS.entries + 1 }, () => meta)
     expect(validateEntryList({ entries })).toBeNull()
+  })
+
+  it('keeps the match rank, and rejects one that is not a sane integer', () => {
+    expect(validateEntryList({ entries: [{ ...meta, rank: 21 }] })?.[0].rank).toBe(21)
+    expect(validateEntryList({ entries: [{ ...meta, rank: -1 }] })).toBeNull()
+    expect(validateEntryList({ entries: [{ ...meta, rank: 1.5 }] })).toBeNull()
+    expect(validateEntryList({ entries: [{ ...meta, rank: LIMITS.rank + 1 }] })).toBeNull()
+  })
+})
+
+describe('byEntryOrder', () => {
+  const meta = (over: Partial<EntryMeta>): EntryMeta =>
+    ({ id: 'e1', vaultId: 'v1', sectionId: 's1', title: 'X', ...over })
+
+  it('leads with the more specific URL match, not the alphabet', () => {
+    // The pwbuddy.com/demo case: two entries on one host, told apart only by
+    // path. Sorting on title alone put Harbor in front on Meridian's own page.
+    const harbor = meta({ title: 'Harbor', rank: 0 })
+    const meridian = meta({ title: 'Meridian', rank: 21 })
+    expect(sorted([harbor, meridian]).map(e => e.title)).toEqual(['Meridian', 'Harbor'])
+  })
+
+  it('falls back to the existing order when ranks tie or are absent', () => {
+    const a = meta({ title: 'Beta', rank: 1 })
+    const b = meta({ title: 'Alpha', rank: 1 })
+    expect(sorted([a, b]).map(e => e.title)).toEqual(['Alpha', 'Beta'])
+    expect(sorted([meta({ title: 'Beta' }), meta({ title: 'Alpha' })]).map(e => e.title))
+      .toEqual(['Alpha', 'Beta'])
   })
 })
 

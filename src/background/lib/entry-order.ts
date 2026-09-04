@@ -6,11 +6,17 @@ import type { EntryMeta } from '../../shared/types'
 // once, so the picker and the popup can never disagree about a list they both
 // got from the same place.
 //
-// Title first because that's what the row leads with. The rest is tie-breaking
+// Relevance first: the desktop ranked these by how specifically each entry's
+// URL matched the page, and two entries on one host are exactly the case where
+// alphabetical order puts the wrong one in front. Sorting title-first threw
+// that away — on /demo/meridian/login, "Harbor" led on the strength of its H.
+//
+// Title next because that's what the row leads with. The rest is tie-breaking
 // only: two logins on one site differ by username, and the vault is the last
 // resort for the same account saved in two of them.
 export function byEntryOrder(a: EntryMeta, b: EntryMeta): number {
-  return a.title.localeCompare(b.title)
+  return (b.rank ?? 0) - (a.rank ?? 0)
+    || a.title.localeCompare(b.title)
     || (a.username ?? a.subtitle ?? '').localeCompare(b.username ?? b.subtitle ?? '')
     || (a.sectionName ?? '').localeCompare(b.sectionName ?? '')
     || a.vaultId.localeCompare(b.vaultId)

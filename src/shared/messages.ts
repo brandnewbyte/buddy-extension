@@ -76,6 +76,22 @@ export interface GetPendingFillMessage {
   // further against the session's remaining work before asking the desktop, so
   // a resumed fill only ever carries the fields this page can actually take.
   offers: FieldType[]
+  // 'reveal' is the same document asking again because its fields changed, and
+  // spends nothing: a re-read must not age the session, the same rule
+  // pendingSave.countDocument applies to the popup. Anything else charges a
+  // document, so a missing or unrecognised reason spends the budget faster
+  // rather than never.
+  reason?: 'load' | 'reveal'
+}
+
+// The entry whose code went stale. Identifiers only — the content script has
+// held these since the fill that placed the code, and the picker already lists
+// them, so nothing secret is being handed back.
+export interface RefreshTotpMessage {
+  type: 'REFRESH_TOTP'
+  id: string
+  vaultId: string
+  sectionId: string
 }
 
 export interface GetPendingSaveMessage {
@@ -198,6 +214,7 @@ export type BackgroundMessage =
   | GetCapabilitySectionsMessage
   | StartCapabilityFillMessage
   | GetPendingFillMessage
+  | RefreshTotpMessage
   | GetPendingSaveMessage
   | CancelFillMessage
   | SaveIconMessage

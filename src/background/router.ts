@@ -8,6 +8,7 @@ import * as startFill from './handlers/start-fill'
 import * as getCapabilitySections from './handlers/get-capability-sections'
 import * as startCapabilityFill from './handlers/start-capability-fill'
 import * as getPendingFill from './handlers/get-pending-fill'
+import * as refreshTotp from './handlers/refresh-totp'
 import * as getPendingSave from './handlers/get-pending-save'
 import * as cancelFill from './handlers/cancel-fill'
 import * as saveIcon from './handlers/save-icon'
@@ -107,6 +108,13 @@ export function registerRouter(): void {
         // Frame policy lives in the handler: a login resume is top-frame only,
         // while a revealed card field is served to the frames the fill reached.
         respond(getPendingFill.handle(sender, message), sendResponse)
+        return true
+
+      case 'REFRESH_TOTP':
+        // Frame-scoped rather than top-frame-only: a login living in a
+        // cross-origin frame filled its own code there and has to be able to
+        // replace it. senderFrameUrl keeps the request answering that frame.
+        respond(refreshTotp.handle(sender, message), sendResponse)
         return true
 
       case 'GET_PENDING_SAVE':

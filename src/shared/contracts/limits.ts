@@ -24,6 +24,8 @@ export const LIMITS = {
   entryFields: 32,
   /** Capability strings listed against one picker result. */
   capabilities: 8,
+  /** URL-match specificity. The desktop's rank is 1 + the matched path length. */
+  rank: 2049,
   /** Results in one picker or popup listing. */
   entries: 500,
   /** Open vaults. */

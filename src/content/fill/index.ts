@@ -3,6 +3,8 @@ import { setControlValue } from './dom'
 import { classifyPage, formFor } from '../forms'
 import type { ClassifiedForm, PageRole } from '../forms'
 import { scrapeIcon } from '../icon'
+import { flashFilled } from './flash'
+import { armTotpRefresh } from './totp-refresh'
 import type { Entry, EntryField, FieldType } from '../../shared/types'
 
 // The core fill invariant: a fill either has an anchor — the field the user
@@ -10,9 +12,13 @@ import type { Entry, EntryField, FieldType } from '../../shared/types'
 // and only proceeds when exactly one form on the page is compatible with the
 // entry. There is no "best" form; ambiguity means nothing happens.
 export async function fill(entry: Entry, anchor?: Element | null): Promise<FieldType[]> {
-  const filled = fillFields(entry, anchor ?? null)
+  const { filled, totp } = fillFields(entry, anchor ?? null)
 
   if (filled.length) {
+    // Armed on every fill, anchored or not: a code placed by a deliberate pick
+    // goes stale on exactly the same clock as a resumed one.
+    if (totp) armTotpRefresh(totp, entry)
+
     send({ type: 'UPDATE_SESSION', filled })
     // Login entries only: a merchant's favicon says nothing about a card
     const isLogin = entry.fields.some(f => f.type === 'username' || f.type === 'password')
@@ -21,22 +27,34 @@ export async function fill(entry: Entry, anchor?: Element | null): Promise<Field
   return filled
 }
 
-function fillFields(entry: Entry, anchor: Element | null): FieldType[] {
+interface FillResult {
+  filled: FieldType[]
+  /** The control the code landed in, so a stale one can be replaced. */
+  totp: Element | null
+}
+
+function fillFields(entry: Entry, anchor: Element | null): FillResult {
   const forms = classifyPage()
 
   const target = anchor
     ? anchoredForm(anchor, forms)
     : uniqueCompatibleForm(forms, entry)
 
-  if (!target) return []
+  if (!target) return { filled: [], totp: null }
 
   const filled: FieldType[] = []
+  let totp: Element | null = null
 
   for (const field of entry.fields) {
-    if (fillField(target, field)) filled.push(field.type)
+    // Unanchored means nothing the user did just now put this value here, so
+    // the fill marks itself. See flash.ts.
+    const touched = fillField(target, field, anchor === null)
+    if (!touched.length) continue
+    filled.push(field.type)
+    if (field.type === 'totp') totp = touched[0]
   }
 
-  return filled
+  return { filled, totp }
 }
 
 // The user picked from this field; its form is the only legitimate target.
@@ -103,12 +121,14 @@ function targetsFor(form: ClassifiedForm, field: EntryField): { el: Element, val
   }
 }
 
-function fillField(form: ClassifiedForm, field: EntryField): boolean {
+/** The controls this field landed in, empty when the form had nowhere for it. */
+function fillField(form: ClassifiedForm, field: EntryField, flash: boolean): Element[] {
   const targets = targetsFor(form, field)
   for (const { el, value } of targets) {
     setControlValue(el as Parameters<typeof setControlValue>[0], value)
+    if (flash) flashFilled(el)
   }
-  return targets.length > 0
+  return targets.map(target => target.el)
 }
 
 // "04/26", "4/2026", "04-26", "04 / 26" → month "04", year "2026"

@@ -43,6 +43,12 @@ export interface EntryMeta {
   sectionName?: string
   /** What this section can fill: login / card / address. */
   capabilities?: string[]
+  /**
+   * How specifically this section's URL matched the page: higher is more
+   * specific, 0 is a host-only match against a stored path that didn't apply.
+   * Ordering only — matching already happened on the desktop.
+   */
+  rank?: number
   title: string
   username?: string
   url?: string
