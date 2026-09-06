@@ -1,6 +1,6 @@
 {
   "extDescription": {
-    "message": "從 Buddy 桌面應用程式自動填入登入資訊。"
+    "message": "從 Buddy 保險庫自動填入登入資訊、卡片和地址。需要 Buddy 桌面應用程式。"
   },
   "popupSubtitle": {
     "message": "密碼管理器"

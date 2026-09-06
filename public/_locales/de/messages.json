@@ -1,6 +1,6 @@
 {
   "extDescription": {
-    "message": "Logins automatisch aus der Buddy-Desktop-App ausfüllen."
+    "message": "Logins, Karten und Adressen aus dem Buddy-Tresor ausfüllen. Erfordert die Buddy-Desktop-App."
   },
   "popupSubtitle": {
     "message": "Passwort-Manager"

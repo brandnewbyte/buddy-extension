@@ -1,6 +1,6 @@
 {
   "extDescription": {
-    "message": "Autocompleta inicios de sesión desde la aplicación de escritorio Buddy."
+    "message": "Autocompleta inicios de sesión, tarjetas y direcciones desde tu bóveda de Buddy. Requiere la aplicación de escritorio Buddy."
   },
   "popupSubtitle": {
     "message": "Administrador de contraseñas"

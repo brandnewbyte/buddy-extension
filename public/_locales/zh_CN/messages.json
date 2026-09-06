@@ -1,6 +1,6 @@
 {
   "extDescription": {
-    "message": "从 Buddy 桌面应用自动填充登录信息。"
+    "message": "从 Buddy 保管库自动填充登录信息、银行卡和地址。需要 Buddy 桌面应用。"
   },
   "popupSubtitle": {
     "message": "密码管理器"

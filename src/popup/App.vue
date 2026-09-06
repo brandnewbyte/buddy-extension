@@ -229,15 +229,18 @@
 
     </div>
 
-    <!-- Site controls. Only meaningful where the picker could appear, so they
-         stay hidden without the grant or on a restricted page. Paused state is
-         shown rather than implied: a toggle whose only feedback is its own
-         label leaves you guessing what just happened. -->
-    <div
-      v-if="site?.hasHostAccess && site.activeOrigin"
-      class="shrink-0 flex items-center justify-between gap-3 px-3 py-2"
-    >
-      <button :class="footerLink" @click="togglePause">
+    <!-- Site controls. Pause is only meaningful where the picker could appear,
+         so it stays hidden without the grant or on a restricted page. Settings
+         stays put either way: without the grant it is the only route in the UI
+         back to the permission prompt, so hiding it strands anyone who declined
+         at onboarding. Paused state is shown rather than implied: a toggle whose
+         only feedback is its own label leaves you guessing what just happened. -->
+    <div class="shrink-0 flex items-center justify-between gap-3 px-3 py-2">
+      <button
+        v-if="site?.hasHostAccess && site.activeOrigin"
+        :class="footerLink"
+        @click="togglePause"
+      >
         <span
           v-if="pausedHere"
           class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400 shrink-0"
@@ -245,6 +248,7 @@
         />
         {{ pausedHere ? t('resumeOnSite') : t('pauseOnSite') }}
       </button>
+      <span v-else />
       <button :class="footerLink" @click="openOptions">{{ t('settings') }}</button>
     </div>
 
@@ -296,15 +300,25 @@ const addresses = ref<EntryMeta[]>([])
 // no, and the popup can still inject and fill on demand.
 const pageLanes = ref<PageLanes | null>(null)
 
+// Whether that question has come back at all. A null `pageLanes` means the
+// probe failed and everything shows, which is the right answer to a failed
+// probe and the wrong one to a pending one: the sections arrive from the
+// desktop before the page has finished answering, so without this the whole
+// card list paints and is then taken away 150ms later on every page with no
+// card form. Nothing is shown on an unanswered question.
+const lanesAnswered = ref(false)
+
 function laneFillable(capability: Capability): boolean {
   const probed = pageLanes.value
   return !probed?.probed || probed.lanes.includes(capability)
 }
 
-const capabilityGroups = computed(() => [
-  { capability: 'card' as Capability, label: t('cards'), entries: cards.value },
-  { capability: 'address' as Capability, label: t('addresses'), entries: addresses.value },
-].filter(group => laneFillable(group.capability)))
+const capabilityGroups = computed(() => lanesAnswered.value
+  ? [
+      { capability: 'card' as Capability, label: t('cards'), entries: cards.value },
+      { capability: 'address' as Capability, label: t('addresses'), entries: addresses.value },
+    ].filter(group => laneFillable(group.capability))
+  : [])
 
 const ctx = computed(() => res.value?.ok ? res.value.data : null)
 const running = computed(() => !(res.value && !res.value.ok && isOffline(res.value.code)))
@@ -354,13 +368,14 @@ async function refresh() {
   }
   // After the context, not blocking it: cards/addresses render as they arrive
   if (openVaults.value.length) { void loadCapabilitySections(); void loadPageLanes() }
-  else { cards.value = []; addresses.value = []; pageLanes.value = null }
+  else { cards.value = []; addresses.value = []; pageLanes.value = null; lanesAnswered.value = false }
 }
 
 async function loadPageLanes() {
   const r: IpcResult<PageLanes> | undefined = await chrome.runtime
     .sendMessage({ type: 'GET_PAGE_LANES' }).catch(() => undefined)
   pageLanes.value = r?.ok ? r.data : null
+  lanesAnswered.value = true
 }
 
 async function loadCapabilitySections() {

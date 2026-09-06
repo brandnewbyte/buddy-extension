@@ -1,6 +1,6 @@
 {
   "extDescription": {
-    "message": "Autofill logins from the Buddy desktop app."
+    "message": "Fill logins, cards, and addresses from your Buddy vault. Requires the Buddy desktop app."
   },
   "popupSubtitle": {
     "message": "Password Manager"

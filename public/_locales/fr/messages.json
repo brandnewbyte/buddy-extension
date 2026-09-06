@@ -1,6 +1,6 @@
 {
   "extDescription": {
-    "message": "Remplissez automatiquement vos identifiants depuis l'application de bureau Buddy."
+    "message": "Remplissez identifiants, cartes et adresses depuis votre coffre-fort Buddy. Nécessite l'application de bureau Buddy."
   },
   "popupSubtitle": {
     "message": "Gestionnaire de mots de passe"

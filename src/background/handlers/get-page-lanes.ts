@@ -1,5 +1,5 @@
 import { probe } from '../lib/frame-offers'
-import { hasHostAccess } from '../lib/host-access'
+import { ensureContentScript } from '../lib/host-access'
 import { activeTab } from '../lib/tabs'
 import type { IpcResult } from '../../shared/ipc'
 import type { PageLanes } from '../../shared/messages'
@@ -21,13 +21,20 @@ const LANES: Capability[] = ['card', 'address']
 export async function handle(): Promise<IpcResult<PageLanes>> {
   const tab = await activeTab()
 
-  // Without a content script nothing can answer, and silence is not the same
-  // as "nothing here" — the popup injects on demand at fill time, so a page
-  // we can't probe may still be fillable. Said plainly so the caller shows
-  // everything rather than hiding the vault behind a question nobody heard.
-  if (!tab?.id || !(await hasHostAccess())) {
-    return { ok: true, data: { probed: false, lanes: [] } }
-  }
+  // No tab is the one case with nothing to ask and no answer to infer.
+  if (!tab?.id) return { ok: true, data: { probed: false, lanes: [] } }
+
+  // The same on-demand injection START_CAPABILITY_FILL performs before its own
+  // probe, so this question reaches exactly the frames a fill would reach.
+  // Asking without it leaves the probe blind wherever the fill is not — a page
+  // granted after it loaded, or a user running on activeTab alone, who would
+  // otherwise be shown their whole card list on every page they open.
+  //
+  // Injection failing means a page no content script can enter — chrome://,
+  // the web store, a PDF — where a fill would find nothing either. So the
+  // probe still runs and its silence is reported as an answer rather than as
+  // an unheard question.
+  await ensureContentScript(tab.id, true)
 
   const answers = await Promise.all(LANES.map(lane => probe(tab.id!, lane)))
 

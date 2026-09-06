@@ -10,6 +10,21 @@ export function visibleControls(): FillControl[] {
   return Array.from(document.querySelectorAll<FillControl>(CONTROL_SELECTOR)).filter(isFillable)
 }
 
+// Attributes are read through Element's own prototype rather than off the node.
+// A <form> exposes its controls as named properties that override the prototype
+// chain ([LegacyOverrideBuiltIns] on HTMLFormElement), so a form containing
+// <button name="hidden"> answers `form.hidden` with that button — truthy, and
+// every field inside the form silently disappears from the page. Stripe's
+// payment element ships exactly such a button, which took every card form
+// hosted in Stripe Elements out of the classifier entirely.
+function hasAttr(el: Element, name: string): boolean {
+  return Element.prototype.hasAttribute.call(el, name)
+}
+
+function attr(el: Element, name: string): string | null {
+  return Element.prototype.getAttribute.call(el, name)
+}
+
 // Style-based visibility, deliberately not layout-based (offsetParent /
 // getClientRects), so it also runs under test DOMs with no layout engine.
 // Catches display:none / visibility:hidden / [hidden] decoy-sink fields;
@@ -24,8 +39,8 @@ function isFillable(el: FillControl): boolean {
   // display does NOT inherit — a child of display:none still reports its
   // own display — so walk the ancestors
   for (let a: Element | null = el; a && a !== el.ownerDocument.body; a = a.parentElement) {
-    if ((a as HTMLElement).hidden) return false
-    if (a.getAttribute('aria-hidden') === 'true') return false
+    if (hasAttr(a, 'hidden')) return false
+    if (attr(a, 'aria-hidden') === 'true') return false
     if (view?.getComputedStyle(a).display === 'none') return false
   }
 
