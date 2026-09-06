@@ -2,7 +2,7 @@
 
 Browser companion for the Buddy password manager desktop app. The extension owns no vault and stores no secrets at rest: the desktop app holds the vault, and the extension talks to it through a native-messaging host over a local socket.
 
-Targets: **Chrome** (MV3) and **Firefox** (MV3, ≥128).
+Targets: **Chrome** (MV3) and **Firefox** (MV3, ≥140 desktop / ≥142 Android).
 
 This source is published so the extension can be reviewed, and so the packages
 on the Chrome Web Store and AMO can be checked against it. It is not a
