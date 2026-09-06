@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "__MSG_extDescription__",
   "default_locale": "en",
+  "homepage_url": "https://pwbuddy.com",
   "browser_specific_settings": {
     "gecko": {
       "id": "extension@pwbuddy.com",

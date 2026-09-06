@@ -11,6 +11,9 @@
   "noLogins": {
     "message": "इस साइट के लिए कोई सहेजा गया लॉगिन नहीं"
   },
+  "logins": {
+    "message": "लॉगिन"
+  },
   "cards": {
     "message": "कार्ड"
   },
@@ -111,19 +114,13 @@
     "message": "पेज छोड़े बिना भरें"
   },
   "onboardAccessBody": {
-    "message": "आप जिन साइटों पर जाते हैं वहाँ Buddy को अनुमति दें और लॉगिन फ़ील्ड पर एक छोटा चयनकर्ता दिखेगा। परेशानी होने पर इसे हर साइट के लिए रोका जा सकता है।"
+    "message": "आप हमेशा टूलबार से भर सकते हैं। पेज पर ही लॉगिन भरने के लिए साइट पहुँच दें।"
   },
   "onboardAccessAllow": {
     "message": "सभी साइटों पर अनुमति दें"
   },
   "onboardAccessGranted": {
     "message": "अनुमति दी गई। चयनकर्ता चालू है।"
-  },
-  "onboardToolbarTitle": {
-    "message": "या टूलबार से भरें"
-  },
-  "onboardToolbarBody": {
-    "message": "किसी भी पेज पर Buddy आइकन पर क्लिक करें। ऊपर की अनुमति दें या न दें, यह काम करता है।"
   },
   "onboardDone": {
     "message": "हो गया"
@@ -147,10 +144,27 @@
     "message": "रोकी गई साइटें"
   },
   "optionsPausedEmpty": {
-    "message": "कोई साइट रोकी नहीं गई। चयनकर्ता परेशान करे तो Buddy पॉपअप से किसी साइट को रोकें।"
+    "message": "कोई साइट रोकी नहीं गई।"
   },
   "optionsResume": {
     "message": "फिर शुरू करें"
+  },
+  "optionsAboutTitle": {
+    "message": "परिचय"
+  },
+  "optionsAboutVersion": {
+    "message": "संस्करण $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "getApp": {
+    "message": "Buddy ऐप पाएँ"
+  },
+  "optionsSupport": {
+    "message": "सहायता"
   },
   "pauseOnSite": {
     "message": "इस साइट पर रोकें"

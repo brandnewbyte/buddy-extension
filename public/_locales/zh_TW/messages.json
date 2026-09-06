@@ -11,6 +11,9 @@
   "noLogins": {
     "message": "此網站沒有已儲存的登入資訊"
   },
+  "logins": {
+    "message": "登入資訊"
+  },
   "cards": {
     "message": "卡片"
   },
@@ -111,19 +114,13 @@
     "message": "不必離開頁面即可填寫"
   },
   "onboardAccessBody": {
-    "message": "在你造訪的網站上允許 Buddy，登入欄位就會出現一個小的選擇清單。覺得礙事時可以依網站暫停。"
+    "message": "你隨時可以從工具列填寫。若想直接在頁面上填寫登入資訊，請允許網站存取。"
   },
   "onboardAccessAllow": {
     "message": "在所有網站上允許"
   },
   "onboardAccessGranted": {
     "message": "已允許。選擇清單已開啟。"
-  },
-  "onboardToolbarTitle": {
-    "message": "也可以從工具列填寫"
-  },
-  "onboardToolbarBody": {
-    "message": "在任何頁面點擊工具列中的 Buddy 圖示。無論是否允許上面的權限，這都能使用。"
   },
   "onboardDone": {
     "message": "完成"
@@ -147,10 +144,27 @@
     "message": "已暫停的網站"
   },
   "optionsPausedEmpty": {
-    "message": "沒有暫停的網站。選擇清單礙事時，可在 Buddy 彈出視窗中暫停。"
+    "message": "沒有暫停的網站。"
   },
   "optionsResume": {
     "message": "恢復"
+  },
+  "optionsAboutTitle": {
+    "message": "關於"
+  },
+  "optionsAboutVersion": {
+    "message": "版本 $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "getApp": {
+    "message": "取得 Buddy 應用程式"
+  },
+  "optionsSupport": {
+    "message": "支援"
   },
   "pauseOnSite": {
     "message": "在此網站暫停"

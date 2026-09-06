@@ -11,6 +11,9 @@
   "noLogins": {
     "message": "Aucun identifiant enregistré pour ce site"
   },
+  "logins": {
+    "message": "Identifiants"
+  },
   "cards": {
     "message": "Cartes"
   },
@@ -111,19 +114,13 @@
     "message": "Remplir sans quitter la page"
   },
   "onboardAccessBody": {
-    "message": "Autorisez Buddy sur les sites que vous visitez et un petit sélecteur apparaît sur les champs de connexion. Vous pouvez le suspendre site par site s’il vous gêne."
+    "message": "Vous pouvez toujours remplir depuis la barre d’outils. Pour remplir directement dans la page, autorisez l’accès aux sites."
   },
   "onboardAccessAllow": {
     "message": "Autoriser sur tous les sites"
   },
   "onboardAccessGranted": {
     "message": "Autorisé. Le sélecteur est actif."
-  },
-  "onboardToolbarTitle": {
-    "message": "Ou remplir depuis la barre d’outils"
-  },
-  "onboardToolbarBody": {
-    "message": "Cliquez sur l’icône Buddy sur n’importe quelle page. Cela fonctionne que vous autorisiez ce qui précède ou non."
   },
   "onboardDone": {
     "message": "Terminé"
@@ -147,10 +144,27 @@
     "message": "Sites suspendus"
   },
   "optionsPausedEmpty": {
-    "message": "Aucun site suspendu. Suspendez-en un depuis la fenêtre Buddy si le sélecteur vous gêne."
+    "message": "Aucun site suspendu."
   },
   "optionsResume": {
     "message": "Reprendre"
+  },
+  "optionsAboutTitle": {
+    "message": "À propos"
+  },
+  "optionsAboutVersion": {
+    "message": "Version $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "getApp": {
+    "message": "Obtenir l’application Buddy"
+  },
+  "optionsSupport": {
+    "message": "Assistance"
   },
   "pauseOnSite": {
     "message": "Suspendre sur ce site"

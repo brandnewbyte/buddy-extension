@@ -11,6 +11,9 @@
   "noLogins": {
     "message": "Không có thông tin đăng nhập nào được lưu cho trang này"
   },
+  "logins": {
+    "message": "Thông tin đăng nhập"
+  },
   "cards": {
     "message": "Thẻ"
   },
@@ -111,19 +114,13 @@
     "message": "Điền mà không rời khỏi trang"
   },
   "onboardAccessBody": {
-    "message": "Cho phép Buddy trên các trang bạn truy cập và một danh sách nhỏ sẽ hiện ở ô đăng nhập. Bạn có thể tạm dừng theo từng trang khi thấy vướng."
+    "message": "Bạn luôn có thể điền từ thanh công cụ. Để điền ngay trên trang, hãy cho phép truy cập trang."
   },
   "onboardAccessAllow": {
     "message": "Cho phép trên mọi trang"
   },
   "onboardAccessGranted": {
     "message": "Đã cho phép. Danh sách đang bật."
-  },
-  "onboardToolbarTitle": {
-    "message": "Hoặc điền từ thanh công cụ"
-  },
-  "onboardToolbarBody": {
-    "message": "Nhấp vào biểu tượng Buddy trên bất kỳ trang nào. Cách này hoạt động dù bạn có cho phép ở trên hay không."
   },
   "onboardDone": {
     "message": "Xong"
@@ -147,10 +144,27 @@
     "message": "Trang đã tạm dừng"
   },
   "optionsPausedEmpty": {
-    "message": "Chưa tạm dừng trang nào. Tạm dừng từ cửa sổ Buddy khi danh sách gây vướng."
+    "message": "Chưa tạm dừng trang nào."
   },
   "optionsResume": {
     "message": "Tiếp tục"
+  },
+  "optionsAboutTitle": {
+    "message": "Giới thiệu"
+  },
+  "optionsAboutVersion": {
+    "message": "Phiên bản $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "getApp": {
+    "message": "Tải ứng dụng Buddy"
+  },
+  "optionsSupport": {
+    "message": "Hỗ trợ"
   },
   "pauseOnSite": {
     "message": "Tạm dừng trên trang này"

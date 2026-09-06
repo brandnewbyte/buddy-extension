@@ -11,6 +11,9 @@
   "noLogins": {
     "message": "Nenhum login salvo para este site"
   },
+  "logins": {
+    "message": "Logins"
+  },
   "cards": {
     "message": "Cartões"
   },
@@ -111,19 +114,13 @@
     "message": "Preencha sem sair da página"
   },
   "onboardAccessBody": {
-    "message": "Permita o Buddy nos sites que você visita e um pequeno seletor aparece nos campos de login. Você pode pausá-lo por site sempre que atrapalhar."
+    "message": "Você sempre pode preencher pela barra de ferramentas. Para preencher na própria página, permita o acesso a sites."
   },
   "onboardAccessAllow": {
     "message": "Permitir em todos os sites"
   },
   "onboardAccessGranted": {
     "message": "Permitido. O seletor está ativo."
-  },
-  "onboardToolbarTitle": {
-    "message": "Ou preencha pela barra de ferramentas"
-  },
-  "onboardToolbarBody": {
-    "message": "Clique no ícone do Buddy em qualquer página. Isso funciona permitindo o acima ou não."
   },
   "onboardDone": {
     "message": "Concluído"
@@ -147,10 +144,27 @@
     "message": "Sites pausados"
   },
   "optionsPausedEmpty": {
-    "message": "Nenhum site pausado. Pause um pela janela do Buddy quando o seletor atrapalhar."
+    "message": "Nenhum site pausado."
   },
   "optionsResume": {
     "message": "Retomar"
+  },
+  "optionsAboutTitle": {
+    "message": "Sobre"
+  },
+  "optionsAboutVersion": {
+    "message": "Versão $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "getApp": {
+    "message": "Obter o app Buddy"
+  },
+  "optionsSupport": {
+    "message": "Suporte"
   },
   "pauseOnSite": {
     "message": "Pausar neste site"

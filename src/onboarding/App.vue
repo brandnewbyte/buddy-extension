@@ -19,6 +19,14 @@
             <h2 class="text-base font-semibold">{{ t('onboardVaultTitle') }}</h2>
             <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{{ t('onboardVaultBody') }}</p>
             <VaultDiagram class="pt-2" />
+            <p class="pt-1">
+              <a
+                :href="SITE_URL"
+                target="_blank"
+                rel="noreferrer"
+                class="inline-block text-sm px-3.5 py-2 rounded-md bg-primary-500 hover:bg-primary-450 text-white transition-colors cursor-pointer"
+              >{{ t('getApp') }}</a>
+            </p>
           </div>
         </article>
 
@@ -37,14 +45,6 @@
               class="text-sm px-3.5 py-2 rounded-md bg-primary-500 hover:bg-primary-450 text-white transition-colors cursor-pointer"
               @click="allow"
             >{{ t('onboardAccessAllow') }}</button>
-          </div>
-        </article>
-
-        <article class="flex gap-4">
-          <StepMark :n="3" />
-          <div class="space-y-2">
-            <h2 class="text-base font-semibold">{{ t('onboardToolbarTitle') }}</h2>
-            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{{ t('onboardToolbarBody') }}</p>
           </div>
         </article>
       </section>
@@ -68,6 +68,8 @@ import VaultDiagram from './VaultDiagram.vue'
 import GlyphDemo from './GlyphDemo.vue'
 
 const OPTIONAL_HOSTS = ['https://*/*', 'http://localhost/*', 'http://127.0.0.1/*']
+
+const SITE_URL = 'https://pwbuddy.com'
 
 const granted = ref(false)
 

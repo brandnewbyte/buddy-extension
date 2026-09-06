@@ -11,6 +11,9 @@
   "noLogins": {
     "message": "No hay inicios de sesión guardados para este sitio"
   },
+  "logins": {
+    "message": "Inicios de sesión"
+  },
   "cards": {
     "message": "Tarjetas"
   },
@@ -111,19 +114,13 @@
     "message": "Llena sin salir de la página"
   },
   "onboardAccessBody": {
-    "message": "Permite Buddy en los sitios que visitas y aparecerá un pequeño selector en los campos de inicio de sesión. Puedes pausarlo por sitio cuando estorbe."
+    "message": "Siempre puedes llenar desde la barra de herramientas. Para llenar en la página misma, permite el acceso a sitios."
   },
   "onboardAccessAllow": {
     "message": "Permitir en todos los sitios"
   },
   "onboardAccessGranted": {
     "message": "Permitido. El selector está activo."
-  },
-  "onboardToolbarTitle": {
-    "message": "O llena desde la barra de herramientas"
-  },
-  "onboardToolbarBody": {
-    "message": "Haz clic en el ícono de Buddy en cualquier página. Esto funciona permitas o no lo anterior."
   },
   "onboardDone": {
     "message": "Listo"
@@ -147,10 +144,27 @@
     "message": "Sitios pausados"
   },
   "optionsPausedEmpty": {
-    "message": "Ningún sitio pausado. Pausa uno desde la ventana de Buddy cuando el selector estorbe."
+    "message": "Ningún sitio pausado."
   },
   "optionsResume": {
     "message": "Reanudar"
+  },
+  "optionsAboutTitle": {
+    "message": "Acerca de"
+  },
+  "optionsAboutVersion": {
+    "message": "Versión $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "getApp": {
+    "message": "Obtener la app de Buddy"
+  },
+  "optionsSupport": {
+    "message": "Soporte"
   },
   "pauseOnSite": {
     "message": "Pausar en este sitio"

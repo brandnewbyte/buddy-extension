@@ -11,6 +11,9 @@
   "noLogins": {
     "message": "此网站没有已保存的登录信息"
   },
+  "logins": {
+    "message": "登录信息"
+  },
   "cards": {
     "message": "卡片"
   },
@@ -111,19 +114,13 @@
     "message": "无需离开页面即可填写"
   },
   "onboardAccessBody": {
-    "message": "在你访问的网站上允许 Buddy，登录框中会出现一个小的选择列表。觉得碍事时可以按网站暂停。"
+    "message": "你随时可以从工具栏填写。若想直接在页面上填写登录信息，请允许网站访问。"
   },
   "onboardAccessAllow": {
     "message": "在所有网站上允许"
   },
   "onboardAccessGranted": {
     "message": "已允许。选择列表已开启。"
-  },
-  "onboardToolbarTitle": {
-    "message": "也可以从工具栏填写"
-  },
-  "onboardToolbarBody": {
-    "message": "在任意页面点击工具栏中的 Buddy 图标。无论是否允许上面的权限，这都能用。"
   },
   "onboardDone": {
     "message": "完成"
@@ -147,10 +144,27 @@
     "message": "已暂停的网站"
   },
   "optionsPausedEmpty": {
-    "message": "没有暂停的网站。选择列表碍事时，可在 Buddy 弹出窗口中暂停。"
+    "message": "没有暂停的网站。"
   },
   "optionsResume": {
     "message": "恢复"
+  },
+  "optionsAboutTitle": {
+    "message": "关于"
+  },
+  "optionsAboutVersion": {
+    "message": "版本 $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "getApp": {
+    "message": "获取 Buddy 应用"
+  },
+  "optionsSupport": {
+    "message": "支持"
   },
   "pauseOnSite": {
     "message": "在此网站暂停"

@@ -4,9 +4,11 @@
        content script draws. -->
   <figure class="not-prose">
     <div class="relative overflow-hidden rounded-lg bg-zinc-100 dark:bg-zinc-900 px-5 py-6">
-      <!-- Oversized and clipped left and right, so it reads as a detail lifted
-           out of a page rather than a form we are asking them to fill in. -->
-      <div class="-mx-6 scale-[1.15] origin-left">
+      <!-- Oversized, so it reads as a zoomed detail of a page rather than a
+           form we are asking them to fill in. It used to be bled past the panel
+           on both sides as well, but a crop that shallow never read as a crop:
+           it just sliced the first letter off the label. -->
+      <div class="scale-[1.15] origin-left">
         <p class="text-[11px] font-medium text-zinc-500 dark:text-zinc-400 mb-1.5">
           {{ t('onboardDemoLabel') }}
         </p>

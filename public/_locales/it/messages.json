@@ -11,6 +11,9 @@
   "noLogins": {
     "message": "Nessun accesso salvato per questo sito"
   },
+  "logins": {
+    "message": "Accessi"
+  },
   "cards": {
     "message": "Carte"
   },
@@ -111,19 +114,13 @@
     "message": "Compila senza lasciare la pagina"
   },
   "onboardAccessBody": {
-    "message": "Consenti Buddy sui siti che visiti e nei campi di accesso comparirà un piccolo selettore. Puoi metterlo in pausa sito per sito quando dà fastidio."
+    "message": "Puoi sempre compilare dalla barra degli strumenti. Per compilare nella pagina stessa, consenti l’accesso ai siti."
   },
   "onboardAccessAllow": {
     "message": "Consenti su tutti i siti"
   },
   "onboardAccessGranted": {
     "message": "Consentito. Il selettore è attivo."
-  },
-  "onboardToolbarTitle": {
-    "message": "Oppure compila dalla barra degli strumenti"
-  },
-  "onboardToolbarBody": {
-    "message": "Fai clic sull’icona di Buddy su qualsiasi pagina. Funziona che tu consenta quanto sopra o no."
   },
   "onboardDone": {
     "message": "Fatto"
@@ -147,10 +144,27 @@
     "message": "Siti in pausa"
   },
   "optionsPausedEmpty": {
-    "message": "Nessun sito in pausa. Mettine uno in pausa dalla finestra di Buddy quando il selettore dà fastidio."
+    "message": "Nessun sito in pausa."
   },
   "optionsResume": {
     "message": "Riprendi"
+  },
+  "optionsAboutTitle": {
+    "message": "Informazioni"
+  },
+  "optionsAboutVersion": {
+    "message": "Versione $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "getApp": {
+    "message": "Scarica l’app Buddy"
+  },
+  "optionsSupport": {
+    "message": "Assistenza"
   },
   "pauseOnSite": {
     "message": "Metti in pausa su questo sito"

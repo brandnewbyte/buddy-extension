@@ -41,6 +41,17 @@
         </ul>
       </section>
 
+      <section class="space-y-3">
+        <h2 class="text-base font-semibold">{{ t('optionsAboutTitle') }}</h2>
+        <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          {{ t('optionsAboutVersion', version) }}
+        </p>
+        <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          <a :href="SITE_URL" target="_blank" rel="noreferrer" class="text-primary-600 hover:text-primary-500 dark:text-primary-300 dark:hover:text-primary-200 hover:underline transition-colors">{{ t('getApp') }}</a>
+          <a :href="SUPPORT_URL" target="_blank" rel="noreferrer" class="text-primary-600 hover:text-primary-500 dark:text-primary-300 dark:hover:text-primary-200 hover:underline transition-colors">{{ t('optionsSupport') }}</a>
+        </div>
+      </section>
+
     </div>
   </div>
 </template>
@@ -54,6 +65,11 @@ import type { IpcResult } from '../shared/ipc'
 import type { SiteSettings } from '../shared/messages'
 
 const OPTIONAL_HOSTS = ['https://*/*', 'http://localhost/*', 'http://127.0.0.1/*']
+
+const SITE_URL = 'https://pwbuddy.com'
+const SUPPORT_URL = 'https://pwbuddy.com/contact'
+
+const version = chrome.runtime.getManifest().version
 
 const settings = ref<SiteSettings | null>(null)
 

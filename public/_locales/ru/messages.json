@@ -11,6 +11,9 @@
   "noLogins": {
     "message": "Для этого сайта нет сохранённых логинов"
   },
+  "logins": {
+    "message": "Логины"
+  },
   "cards": {
     "message": "Карты"
   },
@@ -111,19 +114,13 @@
     "message": "Заполняйте, не покидая страницу"
   },
   "onboardAccessBody": {
-    "message": "Разрешите Buddy на сайтах, которые вы посещаете, и в полях входа появится небольшой список. Его можно приостановить для отдельного сайта, если он мешает."
+    "message": "Заполнять всегда можно с панели инструментов. Чтобы заполнять прямо на странице, разрешите доступ к сайтам."
   },
   "onboardAccessAllow": {
     "message": "Разрешить на всех сайтах"
   },
   "onboardAccessGranted": {
     "message": "Разрешено. Список включён."
-  },
-  "onboardToolbarTitle": {
-    "message": "Или заполняйте с панели инструментов"
-  },
-  "onboardToolbarBody": {
-    "message": "Нажмите значок Buddy на любой странице. Это работает независимо от разрешения выше."
   },
   "onboardDone": {
     "message": "Готово"
@@ -147,10 +144,27 @@
     "message": "Приостановленные сайты"
   },
   "optionsPausedEmpty": {
-    "message": "Нет приостановленных сайтов. Приостановите сайт в окне Buddy, если список мешает."
+    "message": "Нет приостановленных сайтов."
   },
   "optionsResume": {
     "message": "Возобновить"
+  },
+  "optionsAboutTitle": {
+    "message": "О расширении"
+  },
+  "optionsAboutVersion": {
+    "message": "Версия $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "getApp": {
+    "message": "Скачать приложение Buddy"
+  },
+  "optionsSupport": {
+    "message": "Поддержка"
   },
   "pauseOnSite": {
     "message": "Приостановить на этом сайте"

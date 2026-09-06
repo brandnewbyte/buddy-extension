@@ -67,7 +67,7 @@
 
       <!-- Entry list -->
       <template v-if="ctx.searchResults.length">
-        <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mb-1.5 truncate">{{ hostname(activeTabUrl) }}</p>
+        <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mb-1.5">{{ t('logins') }}</p>
         <div class="space-y-1">
           <button
             v-for="entry in ctx.searchResults"
@@ -86,9 +86,10 @@
               />
               <div class="min-w-0">
                 <p class="text-[13px] text-zinc-900 dark:text-zinc-100 truncate leading-none">{{ loginPrimary(entry) }}</p>
-                <!-- Site and section are context for the account above. The
-                     section name is what separates two logins on one entry;
-                     without it duplicate rows are indistinguishable. -->
+                <!-- The site is context for the account above. The section
+                     name is not: the heading already says these are logins.
+                     It comes back only where it is the thing telling two rows
+                     of one entry apart. -->
                 <p v-if="loginSecondary(entry)" class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5 truncate">
                   {{ loginSecondary(entry) }}
                 </p>
@@ -134,8 +135,8 @@
                 />
                 <div class="min-w-0">
                   <p class="text-[13px] text-zinc-900 dark:text-zinc-100 truncate leading-none">{{ entry.title }}</p>
-                  <p v-if="entry.subtitle || entry.sectionName" class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5 truncate">
-                    {{ [entry.subtitle, entry.sectionName].filter(Boolean).join(' · ') }}
+                  <p v-if="capabilitySecondary(entry, group.entries)" class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5 truncate">
+                    {{ capabilitySecondary(entry, group.entries) }}
                   </p>
                 </div>
               </div>
@@ -288,7 +289,6 @@ function openOptions() {
 
 const footerLink = 'flex items-center gap-1.5 text-[11px] text-zinc-500 hover:text-zinc-800 '
   + 'dark:text-zinc-400 dark:hover:text-zinc-200 transition-colors cursor-pointer'
-const activeTabUrl = ref('')
 const fillStatus = ref<Record<string, 'filling' | 'done'>>({})
 const pairState = ref<PairingState>('idle')
 const cards = ref<EntryMeta[]>([])
@@ -423,8 +423,30 @@ function loginPrimary(entry: EntryMeta): string {
 }
 
 function loginSecondary(entry: EntryMeta): string {
-  const rest = entry.username ? [entry.title, entry.sectionName] : [entry.sectionName]
+  const rest = entry.username ? [entry.title] : []
+  if (ambiguous(entry, ctx.value?.searchResults ?? [], loginPrimary, e => e.title)) {
+    rest.push(entry.sectionName)
+  }
   return rest.filter(Boolean).join(' · ')
+}
+
+function capabilitySecondary(entry: EntryMeta, siblings: EntryMeta[]): string {
+  const rest = [entry.subtitle]
+  if (ambiguous(entry, siblings, e => e.title, e => e.subtitle)) rest.push(entry.sectionName)
+  return rest.filter(Boolean).join(' · ')
+}
+
+// One entry can offer several fillable sections, and those rows are otherwise
+// identical. The section name is the only thing separating them, so it earns
+// its line exactly there and nowhere else.
+function ambiguous(
+  entry: EntryMeta,
+  siblings: EntryMeta[],
+  primary: (e: EntryMeta) => string | undefined,
+  secondary: (e: EntryMeta) => string | undefined,
+): boolean {
+  return siblings.some(other =>
+    other !== entry && primary(other) === primary(entry) && secondary(other) === secondary(entry))
 }
 
 // Ids are unique per vault, not globally, so the pair keys both the list and

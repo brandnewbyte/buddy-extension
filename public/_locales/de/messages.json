@@ -11,6 +11,9 @@
   "noLogins": {
     "message": "Keine gespeicherten Logins für diese Seite"
   },
+  "logins": {
+    "message": "Anmeldungen"
+  },
   "cards": {
     "message": "Karten"
   },
@@ -111,19 +114,13 @@
     "message": "Ausfüllen, ohne die Seite zu verlassen"
   },
   "onboardAccessBody": {
-    "message": "Erlaube Buddy auf den Seiten, die du besuchst, und in Anmeldefeldern erscheint eine kleine Auswahl. Du kannst sie pro Seite pausieren, wenn sie stört."
+    "message": "Über die Symbolleiste kannst du jederzeit ausfüllen. Zum Ausfüllen direkt auf der Seite erlaube den Website-Zugriff."
   },
   "onboardAccessAllow": {
     "message": "Auf allen Seiten erlauben"
   },
   "onboardAccessGranted": {
     "message": "Erlaubt. Die Auswahl ist aktiv."
-  },
-  "onboardToolbarTitle": {
-    "message": "Oder über die Symbolleiste ausfüllen"
-  },
-  "onboardToolbarBody": {
-    "message": "Klicke auf jeder Seite auf das Buddy-Symbol. Das funktioniert unabhängig davon, ob du das oben erlaubst."
   },
   "onboardDone": {
     "message": "Fertig"
@@ -147,10 +144,27 @@
     "message": "Pausierte Websites"
   },
   "optionsPausedEmpty": {
-    "message": "Keine Websites pausiert. Pausiere eine im Buddy-Popup, wenn die Auswahl stört."
+    "message": "Keine Websites pausiert."
   },
   "optionsResume": {
     "message": "Fortsetzen"
+  },
+  "optionsAboutTitle": {
+    "message": "Über"
+  },
+  "optionsAboutVersion": {
+    "message": "Version $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "getApp": {
+    "message": "Buddy-App holen"
+  },
+  "optionsSupport": {
+    "message": "Support"
   },
   "pauseOnSite": {
     "message": "Auf dieser Website pausieren"

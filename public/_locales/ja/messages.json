@@ -11,6 +11,9 @@
   "noLogins": {
     "message": "このサイトの保存済みログインはありません"
   },
+  "logins": {
+    "message": "ログイン情報"
+  },
   "cards": {
     "message": "カード"
   },
@@ -111,19 +114,13 @@
     "message": "ページを離れずに入力"
   },
   "onboardAccessBody": {
-    "message": "訪問先のサイトで Buddy を許可すると、ログイン欄に小さな選択リストが表示されます。邪魔なときはサイトごとに一時停止できます。"
+    "message": "入力はいつでもツールバーから行えます。ページ内で直接入力するには、サイトへのアクセスを許可してください。"
   },
   "onboardAccessAllow": {
     "message": "すべてのサイトで許可"
   },
   "onboardAccessGranted": {
     "message": "許可しました。選択リストは有効です。"
-  },
-  "onboardToolbarTitle": {
-    "message": "ツールバーから入力することもできます"
-  },
-  "onboardToolbarBody": {
-    "message": "どのページでもツールバーの Buddy アイコンをクリックしてください。上の許可の有無にかかわらず使えます。"
   },
   "onboardDone": {
     "message": "完了"
@@ -147,10 +144,27 @@
     "message": "一時停止中のサイト"
   },
   "optionsPausedEmpty": {
-    "message": "一時停止中のサイトはありません。選択リストが邪魔なときは Buddy のポップアップから停止できます。"
+    "message": "一時停止中のサイトはありません。"
   },
   "optionsResume": {
     "message": "再開"
+  },
+  "optionsAboutTitle": {
+    "message": "この拡張機能について"
+  },
+  "optionsAboutVersion": {
+    "message": "バージョン $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "getApp": {
+    "message": "Buddy アプリを入手"
+  },
+  "optionsSupport": {
+    "message": "サポート"
   },
   "pauseOnSite": {
     "message": "このサイトで一時停止"

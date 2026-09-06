@@ -11,6 +11,9 @@
   "noLogins": {
     "message": "No saved logins for this site"
   },
+  "logins": {
+    "message": "Logins"
+  },
   "cards": {
     "message": "Cards"
   },
@@ -111,19 +114,13 @@
     "message": "Fill without leaving the page"
   },
   "onboardAccessBody": {
-    "message": "Allow Buddy on the sites you visit and a small picker appears on login fields. You can pause it per site whenever it gets in the way."
+    "message": "You can always fill from the toolbar. To fill logins on the page itself, allow site access."
   },
   "onboardAccessAllow": {
     "message": "Allow on all sites"
   },
   "onboardAccessGranted": {
     "message": "Allowed. The picker is on."
-  },
-  "onboardToolbarTitle": {
-    "message": "Or fill from the toolbar"
-  },
-  "onboardToolbarBody": {
-    "message": "Click the Buddy icon on any page. This works whether or not you allow the above."
   },
   "onboardDone": {
     "message": "Done"
@@ -147,10 +144,27 @@
     "message": "Paused sites"
   },
   "optionsPausedEmpty": {
-    "message": "No sites paused. Pause one from the Buddy popup when the picker gets in the way."
+    "message": "No sites paused."
   },
   "optionsResume": {
     "message": "Resume"
+  },
+  "optionsAboutTitle": {
+    "message": "About"
+  },
+  "optionsAboutVersion": {
+    "message": "Version $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "getApp": {
+    "message": "Get the Buddy app"
+  },
+  "optionsSupport": {
+    "message": "Support"
   },
   "pauseOnSite": {
     "message": "Pause on this site"
