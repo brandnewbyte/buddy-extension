@@ -84,7 +84,7 @@ runs, so its archives are never byte-comparable. AMO accepts a plain zip.
 Tag on `main`, matching the version in `package.json`:
 
 ```bash
-git tag v1.0.0 && git push origin v1.0.0
+git tag -m "v1.0.0" v1.0.0 && git push origin v1.0.0
 ```
 
 `.github/workflows/release.yml` then typechecks, tests, builds, runs the release
@@ -239,12 +239,12 @@ Find your extension ID at `chrome://extensions` (Developer mode must be on). Wit
   "path": "/path/to/buddy-native-host-binary",
   "type": "stdio",
   "allowed_extensions": [
-    "extension@pwbuddy.com"
+    "extensions@pwbuddy.com"
   ]
 }
 ```
 
-Firefox identifies extensions by the `gecko.id` in the manifest (`extension@pwbuddy.com`), not by a hash-derived ID, so this file never needs to change.
+Firefox identifies extensions by the `gecko.id` in the manifest (`extensions@pwbuddy.com`), not by a hash-derived ID, so this file never needs to change.
 
 ### Other platforms
 

@@ -29,6 +29,12 @@ const NAMES = { chrome: 'buddy-chrome.zip', firefox: 'buddy-firefox.zip' }
 // can express so no local timezone can push it below what zip can record.
 const FIXED = new Date('2020-01-01T00:00:00Z')
 
+// Pinning mtime is only half of it: zip writes DOS timestamps in local wall
+// clock, not UTC, so the same instant lands in the archive as different bytes
+// depending on the packaging machine's zone. TZ is forced for the zip call so
+// the recorded time is the one FIXED names.
+const TZ = 'UTC'
+
 const target = process.argv[2]
 if (!NAMES[target]) {
   console.error(`usage: package.mjs <${Object.keys(NAMES).join('|')}>`)
@@ -68,7 +74,7 @@ mkdirSync(join(root, 'releases'), { recursive: true })
 // zip updates an existing archive in place rather than replacing it, which
 // would carry stale entries forward.
 rmSync(out, { force: true })
-execFileSync('zip', ['-qX', out, ...files], { cwd: staging })
+execFileSync('zip', ['-qX', out, ...files], { cwd: staging, env: { ...process.env, TZ } })
 rmSync(staging, { recursive: true, force: true })
 
 console.log(`Packaged -> releases/${NAMES[target]} (${files.length} files)`)

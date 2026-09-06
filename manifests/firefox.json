@@ -7,7 +7,7 @@
   "homepage_url": "https://pwbuddy.com",
   "browser_specific_settings": {
     "gecko": {
-      "id": "extension@pwbuddy.com",
+      "id": "extensions@pwbuddy.com",
       "_comment": "Two floors matter here. 128 is where optional_host_permissions arrives in Firefox MV3, and below it there is no way to grant site access at all, so the picker could never appear. 140 is where data_collection_permissions is understood, and Mozilla requires that key on new submissions; on 128-139 it is accepted but silently ignored, which AMO flags. 140 is therefore the binding number and 128 is only the reason the extension cannot go lower still.",
       "strict_min_version": "140.0",
       "data_collection_permissions": {
