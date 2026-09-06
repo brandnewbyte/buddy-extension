@@ -62,37 +62,14 @@
   "locked": {
     "message": "已鎖定"
   },
-  "saveLoginFor": {
-    "message": "儲存 $TITLE$ 的登入資訊？($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
-  "updatePasswordFor": {
-    "message": "更新 $TITLE$ 的密碼？($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
   "notNow": {
     "message": "暫不"
   },
   "saveFailed": {
     "message": "儲存失敗，請重試。"
+  },
+  "pickerHeader": {
+    "message": "使用 Buddy 自動填入"
   },
   "vaultLocked": {
     "message": "保管庫已鎖定"

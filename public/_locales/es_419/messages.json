@@ -62,37 +62,14 @@
   "locked": {
     "message": "Bloqueadas"
   },
-  "saveLoginFor": {
-    "message": "¿Guardar inicio de sesión para $TITLE$? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
-  "updatePasswordFor": {
-    "message": "¿Actualizar la contraseña de $TITLE$? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
   "notNow": {
     "message": "Ahora no"
   },
   "saveFailed": {
     "message": "No se pudo guardar. Inténtalo de nuevo."
+  },
+  "pickerHeader": {
+    "message": "Autocompletar con Buddy"
   },
   "vaultLocked": {
     "message": "La bóveda está bloqueada"

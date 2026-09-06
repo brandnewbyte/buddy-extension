@@ -7,33 +7,84 @@ import type { OpenVaults } from '../../shared/messages'
 import { scrapeIcon } from '../icon'
 import promptStyles from '../../assets/main.css?inline'
 import { pageIndependentCss, resetHostStyle } from '../shadow'
+import { svgNode } from '../../shared/svg'
+import { BUDDY_MARK } from '../../shared/mark'
 
-const AUTO_HIDE_MS = 8000
+// Long enough to notice, read and decide. The count only runs while the prompt
+// is being ignored: pointer or focus inside holds it open indefinitely.
+const AUTO_HIDE_MS = 20000
 
 let shadowHost: HTMLDivElement | null = null
 let shadowRoot: ShadowRoot | null = null
 let autoHideTimer: ReturnType<typeof setTimeout> | null = null
+
+function stopAutoHide(): void {
+  if (autoHideTimer !== null) { clearTimeout(autoHideTimer); autoHideTimer = null }
+}
+
+// Auto-hide is a snooze: the prompt had its chance and won't reappear on the
+// next page, but the candidate survives in the popup until it expires.
+function startAutoHide(): void {
+  stopAutoHide()
+  autoHideTimer = setTimeout(() => {
+    send({ type: 'SNOOZE_SAVE' })
+    hide()
+  }, AUTO_HIDE_MS)
+}
 
 export function show(data: EntrySaveMeta): void {
   const root = ensureShadowRoot()
 
   const host = (() => { try { return new URL(data.url).host } catch { return data.url } })()
 
-  const bar = document.createElement('div')
-  bar.className = 'flex items-center gap-3 w-full px-4 py-2.5 bg-primary-600 text-white font-semibold text-sm font-sans'
+  const card = document.createElement('div')
+  card.className = 'flex flex-col gap-2.5 w-80 max-w-[90vw] p-3 rounded-xl shadow-2xl '
+    + 'bg-primary-600 text-white font-sans'
 
-  const label = document.createElement('span')
-  label.className = 'flex-1 truncate'
-  label.textContent = data.kind === 'update'
-    ? t('updatePasswordFor', [data.title || host, data.username])
-    : t('saveLoginFor', [data.title || host, data.username])
+  // Brand and question share a line. Each is thin on its own, and a card this
+  // small cannot afford a row that carries one short phrase.
+  const header = document.createElement('div')
+  header.className = 'flex items-center gap-2'
+
+  // Says who is asking. This is a credential prompt drawn over someone else's
+  // page: unmarked, it is shaped like something the page itself could have
+  // drawn, and a user running two managers cannot tell which one wants their
+  // password. The mark carries that alone — it is the same shape onboarding
+  // teaches people to look for in a login field, so it needs no wordmark to
+  // be recognised, and the row is worth more spent on the question.
+  //
+  // Tinted rather than white: the mark knocks its lock out in #fff, so a white
+  // shield would swallow it.
+  const mark = document.createElement('span')
+  mark.className = 'block shrink-0 w-4 h-4 text-primary-300'
+  mark.appendChild(svgNode(BUDDY_MARK))
+
+  // The question alone, at the card's largest size. What is being saved sits
+  // below in its own hierarchy — one bold run-on sentence emphasises nothing.
+  const question = document.createElement('p')
+  question.className = 'min-w-0 truncate text-sm font-semibold'
+  question.textContent = data.kind === 'update' ? t('updatePassword') : t('saveNewLogin')
+
+  // Two lines, as in the popup: the account is what's being saved, and the
+  // site is context for it. The destination goes on the action row, where it
+  // has a whole side to itself.
+  const detail = document.createElement('div')
+  detail.className = 'rounded-lg bg-primary-800 ring-1 ring-inset ring-white/15 px-2.5 py-2'
+
+  const account = document.createElement('p')
+  account.className = 'text-sm text-white truncate'
+  account.textContent = data.username
+
+  const site = document.createElement('p')
+  site.className = 'mt-0.5 text-[11px] text-white/70 truncate'
+  site.textContent = data.title || host
 
   // Destination. Always shown once known: saving into an unseen vault is the
   // failure mode this exists to prevent, and "there was only one" is something
   // the user has to be told rather than left to infer. Solid inset fill over
-  // the bar's own blue, so it reads as a control and not as more label text.
+  // the card's own blue, so it reads as a control and not as more label text.
   const destination = document.createElement('div')
-  destination.className = 'flex items-center gap-1.5 shrink-0 min-w-0 max-w-40 px-1.5 py-1 rounded-md '
+  destination.className = 'flex items-center gap-1.5 mr-auto min-w-0 max-w-40 px-1.5 py-1 rounded-md '
     + 'bg-primary-800 ring-1 ring-inset ring-white/30'
   destination.hidden = true
 
@@ -63,7 +114,7 @@ export function show(data: EntrySaveMeta): void {
   // focused, before the picker had a chance to appear.
   btnSave.disabled = true
 
-  // Whatever the bar ends up naming is what travels with the confirmation.
+  // Whatever the card ends up naming is what travels with the confirmation.
   // Leaving it unset falls back to the desktop's focused vault, which can
   // disagree with the vault on screen.
   let destinationId: string | undefined
@@ -112,11 +163,21 @@ export function show(data: EntrySaveMeta): void {
   btnDismiss.className = 'shrink-0 px-3 py-1 rounded-md text-white/70 text-xs hover:text-white cursor-pointer'
   btnDismiss.textContent = t('notNow')
 
-  bar.append(label, destination, btnSave, btnDismiss)
-  root.appendChild(bar)
+  const actions = document.createElement('div')
+  actions.className = 'flex items-center justify-end gap-2'
+  actions.append(destination, btnSave, btnDismiss)
+
+  header.append(mark, question)
+  detail.append(account, site)
+  card.append(header, detail, actions)
+  root.appendChild(card)
+
+  // Set once the prompt has earned a permanent stay — a failed save has to be
+  // read, so no later pointer or focus change may restart the countdown.
+  let pinned = false
 
   btnSave.addEventListener('click', async () => {
-    if (autoHideTimer !== null) { clearTimeout(autoHideTimer); autoHideTimer = null }
+    stopAutoHide()
     btnSave.disabled = true
 
     // By reference: the background holds the captured credential and sends it
@@ -134,11 +195,13 @@ export function show(data: EntrySaveMeta): void {
       return
     }
 
-    // Leave the bar up (no auto-hide) so the user actually sees the failure
+    // Leave the prompt up (no auto-hide) so the user actually sees the failure
     // instead of it vanishing on its own — e.g. they need to unlock the vault
     // and hit Save again.
+    pinned = true
     btnSave.disabled = false
-    label.textContent = result?.code === 'VAULT_LOCKED'
+    question.className = 'min-w-0 text-sm font-semibold text-amber-200 break-words'
+    question.textContent = result?.code === 'VAULT_LOCKED'
       ? `${t('vaultLocked')} — ${t('openToUnlock')}`
       : t('saveFailed')
   })
@@ -148,16 +211,25 @@ export function show(data: EntrySaveMeta): void {
     hide()
   })
 
-  // Auto-hide is a snooze: the bar had its chance and won't reappear on the
-  // next page, but the candidate survives in the popup until it expires.
-  autoHideTimer = setTimeout(() => {
-    send({ type: 'SNOOZE_SAVE' })
-    hide()
-  }, AUTO_HIDE_MS)
+  // Hovering or focusing holds the prompt open. The vault picker is why this
+  // matters most: its native option list can stay open past the whole timeout,
+  // so without a hold the prompt could vanish mid-choice. Focus is tracked
+  // alongside the pointer because that list draws outside the card, and the
+  // pointer leaving it should not start the count while the select still holds
+  // focus.
+  let hovering = false
+  let focused = false
+  const release = () => { if (!pinned && !hovering && !focused) startAutoHide() }
+  card.addEventListener('pointerenter', () => { hovering = true; stopAutoHide() })
+  card.addEventListener('pointerleave', () => { hovering = false; release() })
+  card.addEventListener('focusin', () => { focused = true; stopAutoHide() })
+  card.addEventListener('focusout', () => { focused = false; release() })
+
+  startAutoHide()
 }
 
 export function hide(): void {
-  if (autoHideTimer !== null) { clearTimeout(autoHideTimer); autoHideTimer = null }
+  stopAutoHide()
   shadowHost?.remove()
   shadowHost = null
   shadowRoot = null
@@ -168,7 +240,7 @@ function ensureShadowRoot(): ShadowRoot {
 
   shadowHost = document.createElement('div')
   resetHostStyle(shadowHost, {
-    position: 'fixed', top: '0', left: '0', right: '0', 'z-index': '2147483647',
+    position: 'fixed', top: '16px', right: '16px', 'z-index': '2147483647',
   })
   document.body.appendChild(shadowHost)
 

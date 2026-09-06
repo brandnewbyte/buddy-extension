@@ -6,6 +6,18 @@ import { send } from '../bridge'
 import { t } from '../../shared/i18n'
 import pickerStyles from '../../assets/main.css?inline'
 import { pageIndependentCss, resetHostStyle } from '../shadow'
+import { svgNode } from '../../shared/svg'
+
+// Static art, kept as markup so the shapes stay legible. svgNode turns each
+// into a real node — see ../../shared/svg.ts for why not innerHTML.
+const CARET = `<svg width="12" height="7" viewBox="0 0 12 7" fill="currentColor"><path d="M6 0L12 7H0L6 0Z"/></svg>`
+
+const LOCK = `<svg class="opacity-50 shrink-0" width="13" height="13" viewBox="0 0 14 14" fill="none">
+  <rect x="2" y="6" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+  <path d="M4.5 6V4a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+</svg>`
+
+const CHEVRON = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`
 
 // ─── State ────────────────────────────────────────────────────────────────────
 
@@ -91,7 +103,7 @@ function mount(anchor: HTMLElement, rows: HTMLElement[], onDecline?: () => void)
 
   const caret = document.createElement('div')
   caret.className = 'leading-none text-primary-500 dark:text-primary-700 ml-8'
-  caret.innerHTML = `<svg width="12" height="7" viewBox="0 0 12 7" fill="currentColor"><path d="M6 0L12 7H0L6 0Z"/></svg>`
+  caret.appendChild(svgNode(CARET))
 
   const content = document.createElement('div')
   content.className = 'bg-white dark:bg-zinc-900 border border-primary-500 dark:border-primary-700 border-solid rounded-lg overflow-hidden'
@@ -128,13 +140,7 @@ function positionPicker(picker: HTMLElement, anchor: HTMLElement): void {
 function buildHeader(): HTMLElement {
   const el = document.createElement('div')
   el.className = 'flex items-center gap-1.5 px-2 py-1 text-[11px] font-semibold text-white uppercase tracking-[.06em] bg-primary-600 select-none'
-  el.innerHTML = `
-    <svg class="opacity-50 shrink-0" width="13" height="13" viewBox="0 0 14 14" fill="none">
-      <rect x="2" y="6" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
-      <path d="M4.5 6V4a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-    </svg>
-    Autofill with Buddy
-  `
+  el.append(svgNode(LOCK), t('pickerHeader'))
   return el
 }
 
@@ -193,7 +199,7 @@ function buildRow(entry: EntryMeta, onPick: (entry: EntryMeta) => void): HTMLEle
 
   const chevron = document.createElement('div')
   chevron.className = 'shrink-0 ml-auto text-blue-500 dark:text-primary-300 opacity-0 group-hover:opacity-100 transition-opacity duration-100'
-  chevron.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+  chevron.appendChild(svgNode(CHEVRON))
 
   row.appendChild(avatarWrap)
   row.appendChild(text)

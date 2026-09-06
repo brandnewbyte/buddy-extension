@@ -253,3 +253,27 @@ Firefox identifies extensions by the `gecko.id` in the manifest (`extension@pwbu
 | macOS | `~/Library/Application Support/Google/Chrome/NativeMessagingHosts/` | `~/Library/Application Support/Mozilla/NativeMessagingHosts/` |
 | Linux | `~/.config/google-chrome/NativeMessagingHosts/` | `~/.mozilla/native-messaging-hosts/` |
 | Windows | Registry: `HKCU\Software\Google\Chrome\NativeMessagingHosts\com.brandnewbyte.buddy` → path to JSON file | Registry: `HKCU\Software\Mozilla\NativeMessagingHosts\com.brandnewbyte.buddy` → path to JSON file |
+
+## Security
+
+Report suspected vulnerabilities privately — see [`SECURITY.md`](SECURITY.md).
+Please don't open a public issue for them.
+
+## License
+
+[GNU General Public License v3.0 only](LICENSE).
+
+Buddy's other public repositories — [buddy-crypto-core][core] and
+[buddy-rescue][rescue] — are dual MIT/Apache-2.0, because both exist to be
+reused: an independent recovery tool has to be able to vendor them, and a
+vault you can only open with our software is not a vault you own. This
+extension carries no such promise. It is a client of the desktop application
+and is inert without it, so copyleft costs its users nothing.
+
+The name "Buddy" and the Buddy mark are not covered by this license.
+
+Unless you state otherwise, any contribution you intentionally submit for
+inclusion in this project is licensed as above, without additional terms.
+
+[core]: https://github.com/brandnewbyte/buddy-crypto-core
+[rescue]: https://github.com/brandnewbyte/buddy-rescue

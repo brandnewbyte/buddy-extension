@@ -122,6 +122,17 @@ describe('card and address fill', () => {
     expect(val('select[name="ship_country"]')).toBe('US')
   })
 
+  // The popup pick: no anchor, so the unique-compatible-form rule decides.
+  // The checkout classifies as `card` and the address block lives inside it,
+  // which is exactly what slice.ts already says when it offers the address
+  // lane on this page.
+  it('fills the address block unanchored, as a popup pick does', async () => {
+    const filled = await fill(addressEntry(), null)
+    expect(filled.sort()).toEqual(['city', 'country', 'postal_code', 'region', 'street'])
+    expect(val('input[name="ship_address1"]')).toBe('1 Main St')
+    expect(val('input[name="ship_city"]')).toBe('Springfield')
+  })
+
   it('never fills login credentials into a checkout', async () => {
     const filled = await fill(entryOf(['username', 'password']), null)
     expect(filled).toEqual([])

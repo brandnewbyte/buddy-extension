@@ -62,37 +62,14 @@
   "locked": {
     "message": "Bloqueados"
   },
-  "saveLoginFor": {
-    "message": "Salvar login para $TITLE$? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
-  "updatePasswordFor": {
-    "message": "Atualizar a senha de $TITLE$? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
   "notNow": {
     "message": "Agora não"
   },
   "saveFailed": {
     "message": "Não foi possível salvar. Tente novamente."
+  },
+  "pickerHeader": {
+    "message": "Preencher com o Buddy"
   },
   "vaultLocked": {
     "message": "O cofre está bloqueado"

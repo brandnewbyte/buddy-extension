@@ -46,9 +46,11 @@ describe('flashFilled', () => {
     // timer must not strip the ring the second one just drew.
     const el = input()
     flashFilled(el)
-    vi.advanceTimersByTime(1300)
+    vi.advanceTimersByTime(700)
     flashFilled(el)
 
+    // Past the point the first flash would have started fading, inside the
+    // second one's hold: the ring is the restart's, not a leftover.
     vi.advanceTimersByTime(300)
     expect(el.style.getPropertyValue('box-shadow')).toContain('#3d67b4')
   })

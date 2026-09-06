@@ -62,37 +62,14 @@
   "locked": {
     "message": "已锁定"
   },
-  "saveLoginFor": {
-    "message": "保存 $TITLE$ 的登录信息？($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
-  "updatePasswordFor": {
-    "message": "更新 $TITLE$ 的密码？($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
   "notNow": {
     "message": "暂不"
   },
   "saveFailed": {
     "message": "保存失败，请重试。"
+  },
+  "pickerHeader": {
+    "message": "使用 Buddy 自动填充"
   },
   "vaultLocked": {
     "message": "保险库已锁定"

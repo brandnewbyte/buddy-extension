@@ -12,8 +12,8 @@
 // layout is touched, so a tight design cannot be broken by it.
 
 const RING = '0 0 0 2px #3d67b4 inset'
-const HOLD_MS = 1400
-const FADE_MS = 400
+const HOLD_MS = 900
+const FADE_MS = 300
 
 // Properties we set, so each one's prior inline value and priority can go back
 // exactly as it was. The page's own stylesheet is untouched either way.

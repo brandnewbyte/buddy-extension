@@ -76,16 +76,25 @@ export async function handle(
     return { ok: true, data: entry }
   }
 
-  return refillCapability(tabId, sender?.frameId, offers)
+  return refillCapability(tabId, sender?.frameId, offers, message.reason)
 }
 
 // Only the frames the original fill reached may ask again, so a revealed CVV
 // box is served while an unrelated frame that merely offers card fields is not.
+//
+// Reveals only. The target exists so a field appearing *in the document that
+// was filled* can still be served; a fresh document has filled nothing, and
+// serving it there re-fills the whole card on every reload for the rest of the
+// TTL. Unlike a login there is no work queue to notice the fields are already
+// placed, so the reason is the only thing separating the two.
 async function refillCapability(
   tabId: number,
   frameId: number | undefined,
   offers: FieldType[],
+  reason: 'load' | 'reveal' | undefined,
 ): Promise<IpcResult<Entry | null>> {
+  if (reason !== 'reveal') return { ok: true, data: null }
+
   const target = await capabilityTarget.get(tabId)
   if (!target || !Number.isInteger(frameId) || !target.frameIds.includes(frameId!)) {
     return { ok: true, data: null }

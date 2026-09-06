@@ -62,37 +62,14 @@
   "locked": {
     "message": "Locked"
   },
-  "saveLoginFor": {
-    "message": "Save login for $TITLE$? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
-  "updatePasswordFor": {
-    "message": "Update password for $TITLE$? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
   "notNow": {
     "message": "Not now"
   },
   "saveFailed": {
     "message": "Couldn't save. Try again."
+  },
+  "pickerHeader": {
+    "message": "Autofill with Buddy"
   },
   "vaultLocked": {
     "message": "Vault is locked"

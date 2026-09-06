@@ -62,37 +62,14 @@
   "locked": {
     "message": "Verrouillés"
   },
-  "saveLoginFor": {
-    "message": "Enregistrer l'identifiant pour $TITLE$ ? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
-  "updatePasswordFor": {
-    "message": "Mettre à jour le mot de passe pour $TITLE$ ? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
   "notNow": {
     "message": "Pas maintenant"
   },
   "saveFailed": {
     "message": "Échec de l'enregistrement. Réessayez."
+  },
+  "pickerHeader": {
+    "message": "Remplir avec Buddy"
   },
   "vaultLocked": {
     "message": "Le coffre est verrouillé"

@@ -14,6 +14,7 @@ import { placeGlyphInPage, type GlyphPlacement } from './glyph-placement'
 import glyphStyles from '../../assets/main.css?inline'
 import { t } from '../../shared/i18n'
 import { BUDDY_MARK } from '../../shared/mark'
+import { svgNode } from '../../shared/svg'
 
 // The browser's own autofill popup is bound to the focused field and closes
 // when that field is blurred. Bouncing focus is what closes it; a programmatic
@@ -120,7 +121,7 @@ export function showGlyph(target: HTMLElement, onOpen: () => void): void {
   button.className = 'fixed border-0 cursor-pointer grid place-items-center '
     + 'transition-colors text-primary-600 dark:text-primary-300 '
     + 'hover:text-primary-700 dark:hover:text-primary-200'
-  button.innerHTML = BUDDY_MARK
+  button.appendChild(svgNode(BUDDY_MARK))
 
   // mousedown, not click: the picker has to anchor to the field, and waiting
   // for click would let the browser move focus first.

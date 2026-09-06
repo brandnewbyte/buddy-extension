@@ -62,37 +62,14 @@
   "locked": {
     "message": "Заблокированы"
   },
-  "saveLoginFor": {
-    "message": "Сохранить логин для $TITLE$? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
-  "updatePasswordFor": {
-    "message": "Обновить пароль для $TITLE$? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
   "notNow": {
     "message": "Не сейчас"
   },
   "saveFailed": {
     "message": "Не удалось сохранить. Попробуйте снова."
+  },
+  "pickerHeader": {
+    "message": "Автозаполнение через Buddy"
   },
   "vaultLocked": {
     "message": "Хранилище заблокировано"

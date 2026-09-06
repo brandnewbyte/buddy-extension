@@ -62,37 +62,14 @@
   "locked": {
     "message": "Đã khóa"
   },
-  "saveLoginFor": {
-    "message": "Lưu thông tin đăng nhập cho $TITLE$? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
-  "updatePasswordFor": {
-    "message": "Cập nhật mật khẩu cho $TITLE$? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
   "notNow": {
     "message": "Để sau"
   },
   "saveFailed": {
     "message": "Không thể lưu. Vui lòng thử lại."
+  },
+  "pickerHeader": {
+    "message": "Điền tự động với Buddy"
   },
   "vaultLocked": {
     "message": "Kho lưu trữ đang bị khóa"

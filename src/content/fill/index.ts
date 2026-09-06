@@ -82,7 +82,12 @@ function compatibleKinds(entry: Entry): ClassifiedForm['kind'][] {
   // their own; card and address entries likewise stay in their lane.
   if (types.has('password') || types.has('username') || types.has('totp')) return ['login']
   if ([...types].some(t => t.startsWith('card_'))) return ['card']
-  return ['address']
+  // Addresses live inside checkout forms as often as in dedicated ones, and a
+  // combined checkout classifies as `card`. slice.ts already says so — its
+  // FORM_LANES puts `card` forms in the address lane, which is what makes the
+  // popup offer addresses on this page at all. Refusing that same form here
+  // was why an unanchored address fill silently did nothing.
+  return ['address', 'card']
 }
 
 // Which controls a wire field lands in, resolution and splitting included.

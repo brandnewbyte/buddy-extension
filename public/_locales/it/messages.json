@@ -62,37 +62,14 @@
   "locked": {
     "message": "Bloccate"
   },
-  "saveLoginFor": {
-    "message": "Salvare l'accesso per $TITLE$? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
-  "updatePasswordFor": {
-    "message": "Aggiornare la password per $TITLE$? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
   "notNow": {
     "message": "Non ora"
   },
   "saveFailed": {
     "message": "Salvataggio non riuscito. Riprova."
+  },
+  "pickerHeader": {
+    "message": "Compila con Buddy"
   },
   "vaultLocked": {
     "message": "La cassaforte è bloccata"

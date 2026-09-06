@@ -9,7 +9,7 @@ import { show as showSavePrompt } from './save-prompt'
 import { dataOr } from '../shared/ipc'
 import type { IpcResult } from '../shared/ipc'
 import type { BackgroundToContentMessage } from '../shared/messages'
-import type { Entry, EntrySaveMeta } from '../shared/types'
+import type { Entry, EntrySaveMeta, FieldType } from '../shared/types'
 
 const isTopFrame = window.self === window.top
 
@@ -33,10 +33,15 @@ async function main(): Promise<void> {
     // Resume a pending fill (multi-page login or desktop-initiated token).
     // Resumes are unanchored by nature: the request names what this page can
     // take, and fill() still only proceeds when one form is unambiguous.
-    if (await resumePendingFill()) return
-
-    const save = dataOr(await send<IpcResult<EntrySaveMeta | null>>({ type: 'GET_PENDING_SAVE' }), null)
-    if (save) showSavePrompt(save)
+    //
+    // Only a fill that actually placed something suppresses the save prompt,
+    // and nothing here suppresses the picker: a resume that reached the page
+    // and filled nothing used to return early and leave the document with no
+    // glyph at all, which reads as the extension having died.
+    if (!await resumePendingFill()) {
+      const save = dataOr(await send<IpcResult<EntrySaveMeta | null>>({ type: 'GET_PENDING_SAVE' }), null)
+      if (save) showSavePrompt(save)
+    }
   }
 
   // Per-origin, and failing closed: an unreachable background means no
@@ -55,15 +60,17 @@ async function resumePendingFill(): Promise<boolean> {
   const entry = dataOr(await send<IpcResult<Entry | null>>({ type: 'GET_PENDING_FILL', offers, reason: 'load' }), null)
   if (!entry) return false
 
-  await runFill(entry, null)
-  return true
+  // Whether anything landed, not merely whether an entry came back: an entry
+  // the page had nowhere to put is not a resume.
+  return (await runFill(entry, null)).length > 0
 }
 
 // fill() reports UPDATE_SESSION itself; we only keep watching for fields
 // that appear later on the same page (revealed inputs, AJAX steps)
-async function runFill(entry: Entry, anchor: Element | null): Promise<void> {
+async function runFill(entry: Entry, anchor: Element | null): Promise<FieldType[]> {
   const filled = await fill(entry, anchor)
   if (filled.length) watchForFields()
+  return filled
 }
 
 // One watcher per page: a new fill (e.g. popup pick over an existing

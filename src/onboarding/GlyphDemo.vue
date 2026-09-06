@@ -21,7 +21,7 @@
 
           <span class="absolute right-2 grid place-items-center w-[18px] h-[18px]">
             <span class="pulse absolute inset-[-7px] rounded-full bg-primary-500/25" />
-            <span class="relative w-full h-full text-primary-600 dark:text-primary-300" v-html="BUDDY_MARK" />
+            <span ref="mark" class="relative w-full h-full text-primary-600 dark:text-primary-300" />
           </span>
         </div>
       </div>
@@ -34,8 +34,15 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import { t } from '../shared/i18n'
 import { BUDDY_MARK } from '../shared/mark'
+import { svgNode } from '../shared/svg'
+
+// Same mark the content script draws, appended rather than bound through
+// v-html — see ../shared/svg.ts.
+const mark = ref<HTMLElement>()
+onMounted(() => mark.value?.appendChild(svgNode(BUDDY_MARK)))
 </script>
 
 <style scoped>

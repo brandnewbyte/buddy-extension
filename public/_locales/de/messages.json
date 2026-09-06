@@ -62,37 +62,14 @@
   "locked": {
     "message": "Gesperrt"
   },
-  "saveLoginFor": {
-    "message": "Login für $TITLE$ speichern? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
-  "updatePasswordFor": {
-    "message": "Passwort für $TITLE$ aktualisieren? ($USER$)",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
   "notNow": {
     "message": "Nicht jetzt"
   },
   "saveFailed": {
     "message": "Speichern fehlgeschlagen. Bitte erneut versuchen."
+  },
+  "pickerHeader": {
+    "message": "Mit Buddy ausfüllen"
   },
   "vaultLocked": {
     "message": "Tresor ist gesperrt"

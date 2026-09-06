@@ -7,13 +7,17 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "extension@pwbuddy.com",
-      "_comment": "128 is the floor for optional_host_permissions in Firefox MV3. Below it there is no way to grant site access at all, so the picker could never appear.",
-      "strict_min_version": "128.0",
+      "_comment": "Two floors matter here. 128 is where optional_host_permissions arrives in Firefox MV3, and below it there is no way to grant site access at all, so the picker could never appear. 140 is where data_collection_permissions is understood, and Mozilla requires that key on new submissions; on 128-139 it is accepted but silently ignored, which AMO flags. 140 is therefore the binding number and 128 is only the reason the extension cannot go lower still.",
+      "strict_min_version": "140.0",
       "data_collection_permissions": {
         "required": [
           "none"
         ]
       }
+    },
+    "gecko_android": {
+      "_comment": "Android trails desktop on data_collection_permissions by two releases, and gecko_android does not inherit gecko's minimum, so the floor is declared again rather than left to default.",
+      "strict_min_version": "142.0"
     }
   },
   "icons": {

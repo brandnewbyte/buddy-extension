@@ -62,37 +62,14 @@
   "locked": {
     "message": "ロック中"
   },
-  "saveLoginFor": {
-    "message": "$TITLE$ のログインを保存しますか？（$USER$）",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
-  "updatePasswordFor": {
-    "message": "$TITLE$ のパスワードを更新しますか？（$USER$）",
-    "placeholders": {
-      "title": {
-        "content": "$1",
-        "example": "example.com"
-      },
-      "user": {
-        "content": "$2",
-        "example": "jane@example.com"
-      }
-    }
-  },
   "notNow": {
     "message": "後で"
   },
   "saveFailed": {
     "message": "保存できませんでした。もう一度お試しください。"
+  },
+  "pickerHeader": {
+    "message": "Buddy で自動入力"
   },
   "vaultLocked": {
     "message": "ボールトはロックされています"
