@@ -77,4 +77,10 @@ rmSync(out, { force: true })
 execFileSync('zip', ['-qX', out, ...files], { cwd: staging, env: { ...process.env, TZ } })
 rmSync(staging, { recursive: true, force: true })
 
+// SHA256SUMS covers both zips at once, so packaging either target on its own
+// leaves it describing an archive that no longer exists. Dropping it here means
+// a stale manifest can never sit beside a zip it disagrees with; package:all
+// writes a fresh one once both targets are built.
+rmSync(join(root, 'releases', 'SHA256SUMS'), { force: true })
+
 console.log(`Packaged -> releases/${NAMES[target]} (${files.length} files)`)
